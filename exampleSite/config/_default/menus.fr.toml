@@ -1,0 +1,6 @@
+############# French navigation ##############
+# main menu  
+[[main]]
+name = "Contact"
+url = "contact"
+weight = 1

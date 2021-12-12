@@ -1,0 +1,24 @@
+<!-- latest post -->
+<div class="widget">
+  <h5 class="widget-title"><span>{{ i18n "latest_article" }}</span></h5>
+  <!-- post-item -->
+  {{ range first 3 ( where site.RegularPages "Section" "post" )}}
+  <ul class="list-unstyled widget-list">
+    <li class="media widget-post align-items-center">
+      <a href="{{ .RelPermalink }}">
+        {{ if .Params.Images }}
+        {{ range first 1 .Params.Images }}
+        <img loading="lazy" class="mr-3" src="{{ . | relURL }}">
+        {{ end }}
+        {{ else }}
+        <p class="recent-thumb-alt mr-3">{{.Title | title}}</p>
+        {{ end }}
+      </a>
+      <div class="media-body">
+        <h5 class="h6 mb-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+        <small>{{ .PublishDate.Format "January 2, 2006" }}</small>
+      </div>
+    </li>
+  </ul>
+  {{ end }}
+</div>

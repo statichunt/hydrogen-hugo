@@ -1,0 +1,230 @@
+// theme switcher
+.theme-switcher {
+  cursor: pointer;
+  margin-left: 20px;
+
+  .sun {
+    opacity: 0;
+  }
+
+  .moon,
+  .sun {
+    transition: 0.35s;
+  }
+}
+
+.dark .theme-switcher {
+  svg {
+    stroke: $white;
+  }
+
+  .sun {
+    opacity: 1;
+  }
+
+  .moon {
+    opacity: 0;
+  }
+}
+
+// content switcher
+body{
+  .only-dark {
+    display: none;
+  }
+  .only-light {
+    display: initial;
+  }
+  &.dark{
+    .only-light {
+      display: none;
+    }
+    .only-dark {
+      display: initial;
+    }
+  }
+}
+
+
+// other css
+body.dark {
+  background-color: $dark-body-bg;
+
+  // preloader
+  .preloader {
+    background-color: $dark-body-bg;
+  }
+
+  .border-default {
+    border-color: $dark-border-color !important;
+  }
+
+  .border {
+    border-color: $dark-border-color !important;
+  }
+
+  .bg-white {
+    background-color: $black !important;
+  }
+
+  .bg-light {
+    background-color: $dark !important;
+  }
+
+  .text-dark {
+    color: $dark-text-dark !important;
+  }
+
+  .text-color {
+    color: $dark-text-color !important;
+  }
+
+  .text-light {
+    color: $dark-text-light !important;
+  }
+
+  .shadow {
+    box-shadow: 0 6px 24px -1px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  // pagination
+  .pagination {
+    .page-item {
+      .page-link {
+        background: $dark;
+        border-color: $dark-border-color;
+        color: $dark-text-dark;
+        &:hover {
+          background: $color-primary;
+          color: $white;
+        }
+      }
+      &.active .page-link {
+        background: $color-primary;
+        color: $white;
+      }
+    }
+  }
+
+  // form
+  .form-select,
+  .form-control {
+    background-color: $dark;
+    color: $white;
+    border: 1px solid $dark-border-color;
+
+    &:focus {
+      border-color: rgba($color-primary, 0.5);
+    }
+  }
+
+  .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+
+    option {
+      color: $black;
+    }
+  }
+
+  .input-group-text {
+    color: $light;
+    border-color: $dark-border-color;
+  }
+
+  // content
+  .content {
+    a {
+      color: $dark-text-color;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    blockquote {
+      color: $white;
+      border-color: $dark-border-color;
+      border-left: 2px solid $color-primary;
+      background: $dark-body-bg;
+    }
+
+    table {
+      border-color: $dark-border-color;
+    }
+
+    tr:not(:last-child) {
+      border-bottom: 1px solid $dark-border-color;
+    }
+
+    thead {
+      background: lighten($color: $dark, $amount: 5);
+
+      tr {
+        border-bottom: 1px solid $dark-border-color;
+      }
+    }
+
+    tbody {
+      background: $dark-body-bg;
+    }
+
+    
+
+  .tab {
+    &-nav-button {
+      border-color: $dark-border-color !important;
+      background-color: $dark;
+      color: $white;
+  
+      &.active {
+        background-color: $dark;
+        border-bottom-color: $dark !important;
+      }
+    }
+    &-content{
+      background-color: $dark;
+      border-color: $dark-border-color;
+    }
+  }
+
+    .notices p::before {
+      color: $white;
+    }
+
+    .notices.note p {
+      border-top: 30px solid rgba(darken(#e3f4ff, 15), .8);
+      background: rgba(darken(#e3f4ff, 15), .15);
+    }
+
+    .notices.note p::after {
+      color: $white;
+    }
+
+    .notices.tip p {
+      border-top: 30px solid rgba(darken(#e2ffe2, 15), .8);
+      background: rgba(darken(#e2ffe2, 15), .15);
+    }
+
+    .notices.tip p::after {
+      color: $white;
+    }
+
+    .notices.info p {
+      border-top: 30px solid rgba(darken(#ffedde, 15), .8);
+      background: rgba(darken(#ffedde, 15), .15);
+    }
+
+    .notices.info p::after {
+      color: $white;
+    }
+
+    .notices.warning p {
+      border-top: 30px solid rgba(darken(#ffdad8, 15), .8);
+      background: rgba(darken(#ffdad8, 15), .15);
+    }
+
+    .notices.warning p::after {
+      color: $white;
+    }
+  }
+}

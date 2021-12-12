@@ -1,0 +1,74 @@
+<!-- navbar -->
+<nav class="{{if site.Params.navbar_fixed}}sticky-top{{end}} navigation">  
+  <ul class="navbar-nav">
+    {{ range site.Taxonomies.categories.ByCount }}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} {{.Count}}</a>
+    </li>
+    {{ end }}
+
+    <!-- menu active -->
+    {{ $currentPage := . }}
+    {{ range site.Menus.main }}
+    {{ $menuURL := .URL | absLangURL }}
+    {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+    {{ $active := eq $menuURL $pageURL }}
+    {{ if .HasChildren }}
+    <li class="nav-item dropdown 
+    {{ range .Children }}
+    {{ $childURL := .URL | absLangURL }}
+    {{ $active := eq $childURL $pageURL }}
+    {{ if $active }}active{{ end }}
+    {{ end }}">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        {{ .Name }}
+      </a>
+      <div class="dropdown-menu">
+        {{ range .Children }}
+        {{ $childURL := .URL | absLangURL }}
+        {{ $active := eq $childURL $pageURL }}
+        <a class="dropdown-item {{ if $active }}active{{ end }}" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+          href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    </li>
+    {{ else }}
+    <li class="nav-item {{ if $active }}active{{ end }}">
+      <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+        href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{.Name}}</a>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+
+  {{ if .IsTranslated }}
+  <!-- Language List -->
+  <div class="dropdown">
+    {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="select-language" data-bs-toggle="dropdown" aria-expanded="false">{{ .LanguageName }}</button>
+    {{ end }}{{ end }}{{ end }}{{ end }}
+    <ul class="dropdown-menu" aria-labelledby="select-language">
+      {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
+        <li id="{{ $translation.Language }}"><a class="dropdown-item active" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
+      {{ else }}
+        <li id="{{ $translation.Language }}"><a class="dropdown-item" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
+      {{ end }}{{ end }}{{ end }}{{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ if site.Params.search }}
+  <!-- search -->
+  <div class="search px-4">
+    <button id="searchOpen" aria-label="search" class="search-btn"><i class="fas fa-search text-dark"></i></button>
+    <div class="search-wrapper">
+      <form action="{{ `search`| relLangURL }}" class="h-100">
+        <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+      </form>
+      <button id="searchClose" class="search-close"><i class="fas fa-xmark text-dark"></i></button>
+    </div>
+  </div>
+  {{ end }}
+</nav>
+<!-- /navigation -->

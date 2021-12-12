@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+<section class="section bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<div class="text-center">
+					<figure>
+						{{ if .Params.image }}
+						<img class="rounded-circle img-fluid mb-4" src="{{ .Params.image | relURL }}">
+						{{else if .Params.Email}}
+						<img class="rounded-circle img-fluid mb-4" src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon">
+						{{ end }}
+						<figcaption>
+							<h4 class="font-weight-bold">
+								{{ .Title }}
+							</h4>
+						</figcaption>
+					</figure>
+					<hr>
+					{{ .Content }}
+					<hr>
+					<ul class="list-inline">
+						{{ range .Params.social }}
+						<li class="list-inline-item"><a href="{{ .link | safeURL}}" target="_blank" rel="noopener noreferrer" ><i class="{{ .icon }}"></i></a></li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="title text-center">
+					<h2 class="section-title">{{ i18n "posted_by" }} {{ .Title }}</h2>
+				</div>
+			</div>
+			{{ range where site.RegularPages "Params.author" (.Title | lower) }}
+			<div class="col-lg-4 col-sm-6 mb-4">
+				{{ .Render "post" }}
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>
+{{ end }}

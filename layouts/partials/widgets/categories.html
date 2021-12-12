@@ -1,0 +1,14 @@
+<!-- categories -->
+<div class="widget">
+  <h5 class="widget-title"><span>{{ i18n "categories" }}</span></h5>
+  {{ if isset site.Taxonomies "categories" }}
+  {{ if not (eq (len site.Taxonomies.categories) 0) }}
+  <ul class="list-unstyled widget-list">
+    {{ range $name, $items := site.Taxonomies.categories }}
+    <li><a href="{{ .Page.RelPermalink }}"{{ if (and (eq $.Page.Kind `term`) (eq $.Page.Type `categories`) (eq $.Page.Title .Page.Title)) }} class="active"{{ end }}>{{ .Page.Title }}
+        <small class="ml-auto">({{ len $items }})</small></a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ end }}
+</div>

@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<!-- widget -->
+{{ $widget:= site.Params.widgets.sidebar }}
+{{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+
+<!-- start post range -->
+{{ $paginator:= .Paginate .Data.Pages }}
+{{ range $paginator.Pages }}
+
+<!-- date format -->
+{{ time.Format ":date_long" .PublishDate }}
+
+<!-- image -->
+{{ partial "images/image.html" (dict "Src" .Params.image "Size" "100x" "Alt" .Title) }}
+
+{{ end }} 
+<!-- end of post range -->
+
+<!-- pagination -->
+{{ template "_internal/pagination.html" . }}
+
+<!-- custom pagination -->
+{{ partial "components/custom-pagination.html" . }}
+
+{{ end }}

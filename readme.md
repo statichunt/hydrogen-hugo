@@ -1,0 +1,24 @@
+### I made sure that...
+
+- [ ] All images are optimised
+- [ ] All functions are working properly
+- [ ] All devices responsive ready
+- [ ] Contact form added
+- [ ] No console error
+- [ ] No spelling mistake
+- [ ] Real content updated
+- [x] Netlify deploy properly
+- [ ] Forestry settings included
+- [ ] Google page speed improved
+- [x] SEO optimised
+- [x] Cookie consent added
+- [ ] All buttons are linked
+- [ ] Sliders auto slides enabled
+- [x] Google analytics added
+- [x] Google Tag Manager added
+- [x] Plausible Analytics added
+- [x] Matomo Analytics added
+- [x] Baidu Analytics added
+- [x] Counter Analytics added
+- [ ] Firebase Support
+- [ ] Documentation added

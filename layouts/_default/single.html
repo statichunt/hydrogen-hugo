@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+<!-- checking blog -->
+{{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <!-- comments -->
+        {{ if .Site.DisqusShortname }}
+        <div class="mt-5">
+          {{ template "_internal/disqus.html" . }}
+        </div>
+        {{ else }}
+        {{ if site.Params.valine_comment.enable}}
+        {{- partial "components/valine-comment.html" . -}}
+        {{ end }}
+        {{ end }}
+        <!-- /comments -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- related post -->
+{{ $related := (where site.RegularPages "Section" "blog") | intersect (where site.Pages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) }}
+{{ range first 3 $related }}
+<!-- post card here -->
+{{ end }}
+<!-- /related post -->
+
+
+<!-- regular page -->
+{{ else }}
+{{ partial "components/page-header.html" . }}
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="content">
+        {{ $imagePath:= .Params.image }}
+
+        {{ if $imagePath }}
+        {{ partial "images/image.html" (dict "Src" $imagePath "Context" .Page ) }}
+        {{ end }}
+
+        {{.Content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- /regular page -->
+
+{{ end }}

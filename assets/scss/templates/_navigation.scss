@@ -1,0 +1,74 @@
+
+// for color
+.navigation {
+  .navbar-nav .nav-item {
+    .nav-link {
+      color: $white;
+      &:hover{
+        color: $color-primary;
+      }
+    }
+    
+    &.active{
+      .nav-link{
+        color: $color-primary;
+      }
+    }
+  }
+
+  select {
+    color: $white;
+    background-color: $body-bg;
+  }
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* search */
+.search-btn {
+  border: 0;
+  background: transparent;
+}
+
+.search-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 2;
+  visibility: hidden;
+  transition: .2s ease;
+  opacity: 0;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.search-box {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  background: $white;
+  font-size: 1.5rem;
+  padding: 0;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.search-close {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  page-break-after: 10px;
+  font-size: 1.5rem;
+}

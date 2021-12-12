@@ -1,0 +1,115 @@
+<!-- JS Plugins + Main script -->
+{{ $scripts := slice }}
+{{ range site.Params.plugins.js}}
+{{ if findRE "^http" .link }}
+<script src="{{ .link | relURL }}" type="application/javascript" {{.attributes | safeHTMLAttr}}></script>
+{{ else }}
+{{ $scripts = $scripts | append (resources.Get .link) }}
+{{ end }}
+{{ end }}
+
+<!-- gallery script -->
+{{ if site.Params.image_gallery }}
+{{ $scripts = $scripts | append (resources.Get "plugins/gallery/glightbox.js" | minify ) }}
+{{ end }}
+
+<!-- search script -->
+{{ if site.Params.search }}
+{{ $scripts = $scripts | append (resources.Get "plugins/search/fuse.js" | minify ) }}
+{{ $scripts = $scripts | append (resources.Get "plugins/search/search.js" | minify ) }}
+{{ end }}
+
+<!-- google map key -->
+{{ if site.Params.google_map.enable }}
+{{ $scripts = $scripts | append (resources.Get "plugins/maps/google-map.js" | minify ) }}
+{{ end }}
+
+<!-- main script -->
+{{ $scripts = $scripts | append (resources.Get "js/script.js" | minify) }}
+{{ $scripts = $scripts | resources.Concat "js/script.js" | minify | fingerprint "sha512" }}
+<script crossorigin="anonymous" defer="defer" integrity="{{ $scripts.Data.Integrity }}" type="application/javascript">{{$scripts.Content | safeJS}}</script>
+
+<!-- cookie -->
+{{ with site.Params.cookies }}
+{{ if .enable }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	{{.content | markdownify}}<span id="js-cookie-button" class="btn btn-sm btn-outline-primary ms-2">{{.button}}</span>
+</div>
+<script type="application/javascript">
+  const cookieBox = document.getElementById('js-cookie-box');
+  const cookieButton = document.getElementById('js-cookie-button');
+  if (!Cookies.get('cookie-box')) {
+    cookieBox.classList.remove('cookie-box-hide');
+    cookieButton.onclick = function () {
+      Cookies.set('cookie-box', true, {
+        expires: {{ .expire_days }}
+      });
+      cookieBox.classList.add('cookie-box-hide');
+    };
+  }
+</script>
+
+<!-- cookie style -->
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+{{ end }}
+{{ end }}
+
+<!-- font family -->
+{{$pf:= site.Params.variables.font_primary}}
+{{$sf:= site.Params.variables.font_secondary}}
+<script type="application/javascript">
+  WebFont.load({
+    google: {
+      api: 'https://fonts.googleapis.com/css2',
+      families: ['{{$pf | default `Lato:wght@400`}}{{if not $sf}}&display=swap{{end}}'{{with $sf}},'{{. | default `Lato:wght@400`}}&display=swap'{{end}}],
+      version: 2
+    },
+    active: () => {sessionStorage.fontsLoaded = true}
+  });
+</script>
+
+<!-- gallary -->
+{{ if site.Params.image_gallery }}
+<script>
+  window.addEventListener('load', (e) => {
+    window.setTimeout(() => {
+      // gallery init
+      if(document.querySelector('.zoomable')){
+        const lightbox = GLightbox();
+      }
+      // justified gallery init
+      const justify_scale = screen.height * 0.25;
+      let items = document.querySelectorAll('.gallery .gallery-item');
+      Array.prototype.forEach.call(items, item => {
+        let image = item.querySelector('img');
+        let ratio = image.width / image.height;
+        item.style.width = justify_scale * ratio + 'px';
+        item.style.flexGrow = ratio;
+      })
+    }, 200);
+  });
+</script>
+{{ end }}
+
+<!-- service worker -->
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register('/service-worker.js')}
+</script>

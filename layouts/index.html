@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row gx-5">
+          <div class="col-lg-4">
+            {{ partial "images/image.html" (dict "Src" .Params.image "Class" "img-fluid" "Alt" .Params.title "Size" "374x374") }}
+          </div>
+          <div class="col-lg-8">
+            <h1>{{ .Params.title | markdownify}}</h1>
+            <p>{{ .Params.designation | markdownify }}</p>
+            {{ with site.Params.social }}
+              <ul class="list-inline">
+                {{ range . }}
+                  <li class="list-inline-item">
+                    <a href="{{ .link | safeURL }}" title="title" target="_blank" rel="nofollow">
+                      <i class="{{.icon}}"></i>
+                    </a>
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        {{ partial "essentials/header.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
