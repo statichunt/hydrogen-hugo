@@ -1,32 +1,34 @@
 {{ define "main" }}
 
-<section class="section">
+<section class="section intro-banner">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <div class="row gx-5">
-          <div class="col-lg-4">
-            {{ partial "images/image.html" (dict "Src" .Params.image "Class" "img-fluid" "Alt" .Params.title "Size" "374x374") }}
+        <div class="row gx-5 gy-5">
+          <div class="col-lg-4 col-md-5 col-sm-8">
+            {{ partial "images/image.html" (dict "Src" .Params.image "Class" "img-fluid intro-image" "Alt" .Params.title "Size" "374x") }}
           </div>
-          <div class="col-lg-8">
-            <h1>{{ .Params.title | markdownify}}</h1>
-            <p>{{ .Params.designation | markdownify }}</p>
-            {{ with site.Params.social }}
+          <div class="col-lg-8 col-md-7">
+            <div class="ps-0 ps-lg-2">
+              <h1 class="title glitch-text mb-4" data-text="{{ .Params.name | markdownify}}">{{ .Params.name | markdownify}}</h1>
+              <p class="lead text-primary">{{ .Params.designation | markdownify }}</p>
+              {{ with site.Params.social }}
               <ul class="list-inline">
                 {{ range . }}
-                  <li class="list-inline-item">
-                    <a href="{{ .link | safeURL }}" title="title" target="_blank" rel="nofollow">
+                  <li class="list-inline-item me-2 mb-1">
+                    <a class="p-1" href="{{ .link | safeURL }}" title="title" target="_blank" rel="nofollow">
                       <i class="{{.icon}}"></i>
                     </a>
                   </li>
                 {{ end }}
               </ul>
-            {{ end }}
+              {{ end }}
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
-        {{ partial "essentials/header.html" . }}
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        {{ partial "essentials/navigation.html" . }}
       </div>
     </div>
   </div>

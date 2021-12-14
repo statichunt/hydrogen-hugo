@@ -1,9 +1,9 @@
 <!-- navbar -->
 <nav class="{{if site.Params.navbar_fixed}}sticky-top{{end}} navigation">  
-  <ul class="navbar-nav">
-    {{ range site.Taxonomies.categories.ByCount }}
+  <ul class="navbar-nav d-block">
+    {{ range first 5 (site.Taxonomies.categories.ByCount) }}
     <li class="nav-item">
-      <a class="nav-link" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} {{.Count}}</a>
+      <a class="nav-link" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span>{{.Count}}</span></a>
     </li>
     {{ end }}
 
@@ -40,23 +40,23 @@
     </li>
     {{ end }}
     {{ end }}
-  </ul>
 
-  {{ if .IsTranslated }}
-  <!-- Language List -->
-  <div class="dropdown">
-    {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="select-language" data-bs-toggle="dropdown" aria-expanded="false">{{ .LanguageName }}</button>
-    {{ end }}{{ end }}{{ end }}{{ end }}
-    <ul class="dropdown-menu" aria-labelledby="select-language">
+    {{ if .IsTranslated }}
+    <!-- Language List -->
+    <li class="nav-item dropdown">
       {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
-        <li id="{{ $translation.Language }}"><a class="dropdown-item active" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
-      {{ else }}
-        <li id="{{ $translation.Language }}"><a class="dropdown-item" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
+      <button class="dropdown-toggle bg-transparent border-0 nav-link" type="button" id="select-language" data-bs-toggle="dropdown" aria-expanded="false">{{ .LanguageName }}</button>
       {{ end }}{{ end }}{{ end }}{{ end }}
-    </ul>
-  </div>
-  {{ end }}
+      <ul class="dropdown-menu" aria-labelledby="select-language">
+        {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
+          <li id="{{ $translation.Language }}"><a class="dropdown-item active" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
+        {{ else }}
+          <li id="{{ $translation.Language }}"><a class="dropdown-item" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
+        {{ end }}{{ end }}{{ end }}{{ end }}
+      </ul>
+    </li>
+    {{ end }}
+  </ul>
 
   {{ if site.Params.search }}
   <!-- search -->
