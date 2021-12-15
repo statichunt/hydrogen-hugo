@@ -15,11 +15,13 @@ logo_text = "Boilerplate"
 navbar_fixed = false
 # search
 search = true
+# main sections
+mainSections = ["blog"]
 # image gallery shortcode
 image_gallery = true
 # copyright
 theme_copyright = true
-copyright = "Copyright by your company"
+copyright = "Copyright by your_company"
 # google tag manager, see https://developers.google.com/tag-manager/
 google_tag_manager = "" # example: G-XXXXXXXXXX
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"

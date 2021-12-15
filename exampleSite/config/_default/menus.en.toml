@@ -1,6 +1,11 @@
 ############# English navigation ##############
 # main menu  
 [[main]]
+name = "All Blogs"
+url = "blog/"
+weight = 1
+
+[[main]]
 name = "Contact"
 url = "contact"
-weight = 1
+weight = 2
