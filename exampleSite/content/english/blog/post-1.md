@@ -2,8 +2,8 @@
 title: "Artificial Intelligence and Robotics In A Nutshell"
 description: "meta description"
 image: "images/post/post-1.png"
-date: 2021-01-24T18:19:25+06:00
-categories: ["programming"]
+date: 2021-12-17T18:19:25+06:00
+categories: ["assistant"]
 draft: false
 ---
 

@@ -3,6 +3,9 @@
   
 - id: address
   translation: Our Address
+  
+- id: all_posts
+  translation: All Posts
 
 - id: phone
   translation: Phone Number

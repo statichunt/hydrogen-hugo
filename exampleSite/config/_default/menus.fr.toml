@@ -1,5 +1,5 @@
 ############# French navigation ##############
-# main menu  
+# main menu
 [[main]]
 name = "Contact"
 url = "contact"
