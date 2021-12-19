@@ -14,6 +14,8 @@ draft: false
 
 ##### Paragraph
 Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. Could someone survive inside a transporter buffer for 75 years? Fate. It protects fools, little children, and ships.
+
+Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard.
 <hr>
 
 ##### Emphasis :
@@ -24,7 +26,7 @@ Did you come here for something in particular or just general Riker-bashing? And
 5. <u>Did you come here for something in particular </u>
 6. Did you come here for ~~something in particular~~ 
 7. URLs and URLs in angle brackets will automatically get turned into links. <u>[http://www.example.com](http://www.example.com)</u>    or 
-8. <u>[http://www.example.com](http://www.example.com)</u> and sometimes example.com (but not on Github, for example).
+8. [http://www.example.com](http://www.example.com) and sometimes example.com (but not on Github, for example).
 <hr>
 
 ##### Ordered list
@@ -41,22 +43,40 @@ Did you come here for something in particular or just general Riker-bashing? And
 <hr>
 
 ##### Code and Syntax Highlighting :
-``` javascript
-var s = "JavaScript syntax highlighting";
-const plukDeop = key => obj => key.split
-const compose = key => obj => key.split
-alert(s);
-```
-``` javascript
-var s = "JavaScript syntax highlighting";
-const plukDeop = key => obj => key.split
-const compose = key => obj => key.split
-alert(s);
+###### HTML
+``` html
+<ul>
+  <li class="nav-item">
+    <a class="nav-link" href="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="about/">About</a>
+  </li>
+</ul>
 ```
 <hr>
 
-##### Buttons
-{{< button "Button" "#!">}} 
+###### CSS
+``` css
+img {
+  vertical-align: middle;
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+```
+<hr>
+
+###### JavaScript
+``` javascript
+window.addEventListener('load', (e) => {
+  document.querySelector(".preloader").style.display = "none";
+});
+```
+<hr>
+
+##### Button
+{{< button "Button" "#!">}}
 <hr>
 
 ##### Quote
@@ -84,17 +104,17 @@ alert(s);
 ##### Tab :
 {{< tabs >}}
   {{< tab "Tab 1" >}}
-  ## Title goes here
+  ###### Did you come here for something in particular?
   Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. 
   {{< /tab >}}
 
   {{< tab "Tab 2" >}}
-   ## Title goes here
+   ###### I wanna talk about the assassination attempt.
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br> <br> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
   {{< /tab >}}
 
   {{< tab "Tab 3" >}}
-   ## Title goes here
+   ###### We know you’re dealing in stolen ore
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br> <br>
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
   {{< /tab >}}
@@ -102,7 +122,7 @@ alert(s);
 {{< /tabs >}}
 <hr>
 
-# Table :
+##### Table :
 | #           | First             | Last              | Handle  |
 | :-----------: | :-------------:     |:-------------:    | :-----:|
 | **1**      | Row:1 Cell:1      | Row:1 Cell:2      | Row:1 Cell:3 |
@@ -110,29 +130,29 @@ alert(s);
 | **3**      | Row:3 Cell:1      | Row:3 Cell:2      |    Row:3 Cell:3 |
 <hr>
 
-# Collapse :
- {{< collapse "collapse 1" >}}
-  * Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  * Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  * Lorem ipsum dolor sit amet consectetur
- {{< /collapse >}}
+##### Collapse :
+{{< collapse "Why should you need to do this?" >}}
+* Lorem ipsum dolor sit amet consectetur adipisicing elit.
+* Lorem ipsum dolor sit amet consectetur adipisicing elit.
+* Lorem ipsum dolor sit amet consectetur
+{{< /collapse >}}
 
-  {{< collapse "collapse 2" >}}
-  * Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  * Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  * Lorem ipsum dolor sit amet consectetur
- {{< /collapse >}}
+{{< collapse "How can I adjust Horizontal centering" >}}
+* Lorem ipsum dolor sit amet consectetur adipisicing elit.
+* Lorem ipsum dolor sit amet consectetur adipisicing elit.
+* Lorem ipsum dolor sit amet consectetur
+{{< /collapse >}}
 
-  {{< collapse "collapse 3" >}}
-  * Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  * Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  * Lorem ipsum dolor sit amet consectetur
- {{< /collapse >}}
+{{< collapse "Should you use Negative margin?" >}}
+* Lorem ipsum dolor sit amet consectetur adipisicing elit.
+* Lorem ipsum dolor sit amet consectetur adipisicing elit.
+* Lorem ipsum dolor sit amet consectetur
+{{< /collapse >}}
 <hr>
 
-# Gallery
-{{< gallery dir="images/gallery" class="" height="300" width="500" popupable="true" >}}
+##### Gallery
+{{< gallery dir="images/gallery" class="" zoomable="true" >}}
 <hr>
 
-# Youtube :
-{{< youtube C0DPdy98e4c >}}
+##### Youtube :
+{{< youtube ResipmZmpDU >}}

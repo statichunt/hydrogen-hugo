@@ -168,24 +168,22 @@ body.dark {
       background: $dark-body-bg;
     }
 
-    
-
-  .tab {
-    &-nav-button {
-      border-color: $dark-border-color !important;
-      background-color: $dark;
-      color: $white;
-  
-      &.active {
+    .tab {
+      &-nav-button {
+        border-color: $dark-border-color !important;
         background-color: $dark;
-        border-bottom-color: $dark !important;
+        color: $white;
+    
+        &.active {
+          background-color: $dark;
+          border-bottom-color: $dark !important;
+        }
+      }
+      &-content{
+        background-color: $dark;
+        border-color: $dark-border-color;
       }
     }
-    &-content{
-      background-color: $dark;
-      border-color: $dark-border-color;
-    }
-  }
 
     .notices p::before {
       color: $white;

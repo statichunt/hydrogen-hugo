@@ -34,4 +34,14 @@
   </div>
 </section>
 
+<section class="section pt-4">
+  <div class="container">
+    <div class="row article-row g-0">
+      {{ range where site.RegularPages "Section" "in" site.Params.mainSections }}
+        {{ .Render "post" }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
 {{ end }}

@@ -22,7 +22,7 @@ h4,
 h5,
 h6 {
   font-family: $font-primary;
-  font-weight: 700;
+  font-weight: 400;
   color: $white;
 }
 
@@ -41,7 +41,7 @@ $type-levels: 6,5,4,3,2,1;
   h#{$level},
   .h#{$level} {
     font-size: $font-size;
-    line-height: calc(2px + 2ex + 2px);
+    line-height: calc(2px + 2ex + 8px);
     margin-bottom: 0.65em;
 
     // responsive for h1, h2, h3, h4

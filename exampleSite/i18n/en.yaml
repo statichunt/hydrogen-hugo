@@ -1,8 +1,11 @@
 - id: read_more
-  translation: Read More
+  translation: Learn More
   
 - id: address
   translation: Our Address
+  
+- id: back_to_home
+  translation: Back to Home
   
 - id: all_posts
   translation: All Posts

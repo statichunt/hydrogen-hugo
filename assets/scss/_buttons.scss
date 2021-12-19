@@ -9,6 +9,7 @@
   position: relative;
   z-index: 1;
   transition: .2s ease;
+  text-decoration: none !important;
 
   &:hover,
   &:active,
@@ -21,24 +22,15 @@
 }
 
 .btn-primary {
-  background: $color-primary;
-  color: $white;
-  border-color: $color-primary;
-
-  &:hover,
-  &:active,
-  &.active,
-  &:focus,
-  &.focus {
-    background: $color-primary !important;
-    border-color: $color-primary !important;
+  background: $white;
+  color: $black !important;
+  box-shadow: -2px 1px #b942fd, 2px -1px #00ff2b;
+  transform: skewX(-12deg);
+  border: 0;
+  span {
+    display: block;
+    transform: skewX(12deg);
   }
-}
-
-.btn-outline-primary {
-  background: transparent;
-  color: $text-color;
-  border-color: $color-primary;
 
   &:hover,
   &:active,
@@ -47,6 +39,5 @@
   &.focus {
     background: $color-primary !important;
     border-color: $color-primary !important;
-    color: $white;
   }
 }

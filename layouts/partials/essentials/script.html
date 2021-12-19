@@ -13,12 +13,6 @@
 {{ $scripts = $scripts | append (resources.Get "plugins/gallery/glightbox.js" | minify ) }}
 {{ end }}
 
-<!-- search script -->
-{{ if site.Params.search }}
-{{ $scripts = $scripts | append (resources.Get "plugins/search/fuse.js" | minify ) }}
-{{ $scripts = $scripts | append (resources.Get "plugins/search/search.js" | minify ) }}
-{{ end }}
-
 <!-- google map key -->
 {{ if site.Params.google_map.enable }}
 {{ $scripts = $scripts | append (resources.Get "plugins/maps/google-map.js" | minify ) }}

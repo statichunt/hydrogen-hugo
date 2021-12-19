@@ -1,22 +1,31 @@
 <!-- navbar -->
 <nav class="{{if site.Params.navbar_fixed}}sticky-top{{end}} navigation">  
   <ul class="navbar-nav d-block">
+
+    <!-- showing menu first item -->
+    <li class="nav-item {{ if $.IsHome }}active{{ end }}">
+      <a class="nav-link" href="{{site.BaseURL | relLangURL}}"><span>{{i18n `all_posts`}}</span></a>
+    </li>
+    <!-- showing menu first item -->
+
+    <!-- showing categories -->
     {{ range first 5 (site.Taxonomies.categories.ByCount) }}
     <li class="nav-item">
-      <a class="nav-link" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span>{{.Count}}</span></a>
+      <a class="nav-link" href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span></a>
     </li>
     {{ end }}
+    <!-- showing categories -->
 
-    <!-- menu active -->
+    <!-- showing menus -->
     {{ $currentPage := . }}
     {{ range site.Menus.main }}
-    {{ $menuURL := .URL | absLangURL }}
-    {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+    {{ $menuURL := .URL | relLangURL }}
+    {{ $pageURL:= $currentPage.RelPermalink | relLangURL }}
     {{ $active := eq $menuURL $pageURL }}
     {{ if .HasChildren }}
     <li class="nav-item dropdown 
     {{ range .Children }}
-    {{ $childURL := .URL | absLangURL }}
+    {{ $childURL := .URL | relLangURL }}
     {{ $active := eq $childURL $pageURL }}
     {{ if $active }}active{{ end }}
     {{ end }}">
@@ -26,7 +35,7 @@
       </a>
       <div class="dropdown-menu">
         {{ range .Children }}
-        {{ $childURL := .URL | absLangURL }}
+        {{ $childURL := .URL | relLangURL }}
         {{ $active := eq $childURL $pageURL }}
         <a class="dropdown-item {{ if $active }}active{{ end }}" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
           href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
@@ -36,10 +45,11 @@
     {{ else }}
     <li class="nav-item {{ if $active }}active{{ end }}">
       <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
-        href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{.Name}}</a>
+        href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}"><span>{{.Name}}</span></a>
     </li>
     {{ end }}
     {{ end }}
+    <!-- showing menus -->
 
     {{ if .IsTranslated }}
     <!-- Language List -->
@@ -57,18 +67,5 @@
     </li>
     {{ end }}
   </ul>
-
-  {{ if site.Params.search }}
-  <!-- search -->
-  <div class="search px-4">
-    <button id="searchOpen" aria-label="search" class="search-btn"><i class="fas fa-search text-dark"></i></button>
-    <div class="search-wrapper">
-      <form action="{{ `search`| relLangURL }}" class="h-100">
-        <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
-      </form>
-      <button id="searchClose" class="search-close"><i class="fas fa-xmark text-dark"></i></button>
-    </div>
-  </div>
-  {{ end }}
 </nav>
 <!-- /navigation -->

@@ -20,6 +20,8 @@
 <div class="{{$class}} gallery {{if eq $zoomable `true`}}zoomable{{end}}">
 {{ range $assetsImage }}
 {{ $image := resources.Get . }}
+{{ $imageExt := path.Ext $image }}
+{{ if or (eq $imageExt `.jpg`) (eq $imageExt `.jpeg`) (eq $imageExt `.png`) (eq $imageExt `.webp`) (eq $imageExt `.svg`) (eq $imageExt `.gif`) (eq $imageExt `.ico`) }}
 
 {{ partial "images/gallery-pipe.html" (dict "Context" $scratch "Height" $height "Width" $width "Command" $command "Webp" $webp "Image" $image "Option" $option "Zoomable" $zoomable) }}
 {{ $imageHeight:= $scratch.Get "image-height" }}
@@ -34,6 +36,7 @@
 	<img src="{{ $scratch.Get `image` }}" class="m-0 img-fluid" alt="{{.Name}}" onerror="this.onerror='null';this.src='{{ $scratch.Get `imageFallback` }}'">
 	{{end}}
 </div>
+{{ end }}
 {{ end }} <!-- end of image range -->
 </div>
 
@@ -44,6 +47,8 @@
 <div class="{{$class}} gallery {{if eq $zoomable `true`}}zoomable{{end}}">
 {{ range $contentImage }}
 {{ $image:= $page.Resources.GetMatch (printf "*%s*" .) }}
+{{ $imageExt := path.Ext $image }}
+{{ if or (eq $imageExt `.jpg`) (eq $imageExt `.jpeg`) (eq $imageExt `.png`) (eq $imageExt `.webp`) (eq $imageExt `.svg`) (eq $imageExt `.gif`) (eq $imageExt `.ico`) }}
 
 {{ partial "images/gallery-pipe.html" (dict "Context" $scratch "Height" $height "Width" $width "Command" $command "Webp" $webp "Image" $image "Option" $option "Zoomable" $zoomable) }}
 {{ $imageHeight:= $scratch.Get "image-height" }}
@@ -58,7 +63,7 @@
 	<img src="{{ $scratch.Get `image` }}" class="m-0 img-fluid" alt="{{.Name}}" onerror="this.onerror='null';this.src='{{ $scratch.Get `imageFallback` }}'">
 	{{end}}
 </div>
-
+{{ end }}
 {{ end }} <!-- end of image range -->
 </div>
 

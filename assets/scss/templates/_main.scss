@@ -1,62 +1,49 @@
+// intro-banner
 .intro-banner {
-  .intro-image {
-    // clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 0, 100% 0, 100% 0, 100% 18%, 83% 0);
-  }
+  // .intro-image {
+  //   clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 0, 100% 0, 100% 0, 100% 18%, 83% 0);
+  // }
   .title {
     color: $white;
     position: relative;
     font-size: 90px;
     word-spacing: 100vw;
     line-height: 1.05;
+    text-shadow: -2px 1px #00fff2, 2px 0px red, -2px -1px blue, 2px 0 #1eff00;
+    margin-top: -15px;
     @include tablet {
       font-size: 80px;
+      margin-top: 0;
     }
   }
-  .title::before,
-  .title::after {
-    color: $white;
-    content: attr(data-text);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: $body-bg;
-    overflow: hidden;
-    top: 0;
+}
+
+// article card
+.article-row {
+  border-left: 1px solid #2f4050;
+  border-top: 1px solid #2f4050;
+  > div {
+    border-right: 1px solid #2f4050;
+    border-bottom: 1px solid #2f4050;
   }
-  .title::before {
-    left: 3px;
-    text-shadow: -2px 0 rgb(0, 255, 242), 2px 0 red;
-    animation-name: glitch-animation-1;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse-alternate;
+  .card {
+    padding: 35px;
   }
-  .title::after {
-    left: -3px;
-    text-shadow: -2px 0 blue, px 0 rgb(30, 255, 0);
-    animation-name: glitch-animation-2;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse-alternate;
-  }
-  @keyframes glitch-animation-1 {
-    $steps: 20;
-    @for $i from 0 through $steps {
-      #{percentage($i*(1/$steps))} {
-        clip: rect(random(190)+px, 560px, random(190)+px, 0px);
-      }
+}
+
+.article {
+  .blog-title {
+    &:hover {
+      color: rgba($light, .9);
+      text-shadow: -1px 1px #b942fd, 1px 0 #00ff2b;
     }
   }
-  @keyframes glitch-animation-2 {
-    $steps: 20;
-    @for $i from 0 through $steps {
-      #{percentage($i*(1/$steps))} {
-        clip: rect(random(190)+px, 560px, random(190)+px, 0px);
-      }
+}
+
+.card-meta {
+  a {
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
