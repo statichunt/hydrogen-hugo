@@ -169,6 +169,21 @@ a:hover {
 
 // content style
 .content {
+  * {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 25px;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 15px !important;
+  }
+
   img {
     max-width: 100%;
     height: auto;
@@ -436,13 +451,36 @@ a:hover {
 
   // blockquote
   blockquote {
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
     padding: 1.5rem 2.5rem;
+    padding-top: 2.5rem;
     margin: 2rem 0;
-    font-weight: 700;
     color: $white;
-    border-left: 2px solid $color-primary;
-    background: $body-bg;
+    position: relative;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transform: skew(-2deg);
+      background-color: $white;
+      box-shadow: -3px 2px #b942fd, 3px -2px #00ff2b;
+      opacity: .2;
+    }
+    &::after {
+      position: absolute;
+      content: "❝";
+      top: -35px;
+      font-size: 7rem;
+      opacity: .2;
+      left: 20px;
+      text-shadow: -3px 1px #b942fd, 3px -1px #00ff2b;
+      pointer-events: none;
+    }
 
     p {
       margin-bottom: 0 !important;

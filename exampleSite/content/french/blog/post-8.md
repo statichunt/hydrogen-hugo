@@ -1,7 +1,7 @@
 ---
 title: "Drone Software and Development"
 description: "meta description"
-image: "images/post/post-8.png"
+image: "images/posts/post-8.png"
 date: 2021-09-16T18:19:25+06:00
 categories: ["technology"]
 draft: false
@@ -18,6 +18,6 @@ Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu
 #### Work From Home
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
 
-{{< image title="" w="" h="" o="webp q1" p="center" c="rounded" src="images/post/post-5.png" alt="alter-text" >}}
+{{< image title="" w="" h="" o="webp q1" p="center" c="rounded" src="images/posts/post-5.jpg" alt="alter-text" >}}
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
