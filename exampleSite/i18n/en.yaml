@@ -7,14 +7,35 @@
 - id: back_to_home
   translation: Back to Home
   
+- id: send_me_a_message
+  translation: Send me a message
+  
 - id: all_posts
   translation: All Posts
+  
+- id: subject
+  translation: Subject
+  
+- id: name
+  translation: Name
+  
+- id: reasons_for_contact
+  translation: Reasons for Contact
+  
+- id: message
+  translation: Message
+  
+- id: your_message
+  translation: Your Message
+  
+- id: send_message
+  translation: Send Message
 
 - id: phone
   translation: Phone Number
 
 - id: email
-  translation: Message Us
+  translation: Email
 
 - id: contact_form
   translation: Contact Form

@@ -1,4 +1,4 @@
 ---
 title: "Assistant"
-color: "#FF4417"
+color: "#ff7a5a"
 ---
