@@ -22,6 +22,9 @@
 - id: reasons_for_contact
   translation: Reasons for Contact
   
+- id: search_blog
+  translation: Search Blog
+  
 - id: message
   translation: Message
   
