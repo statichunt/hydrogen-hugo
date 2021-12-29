@@ -1,4 +1,4 @@
 ---
 title: "Github"
-color: ""
+color: "#e6f2ff"
 ---

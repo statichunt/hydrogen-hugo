@@ -8,7 +8,8 @@
     position: relative;
     font-size: 90px;
     word-spacing: 100vw;
-    line-height: 1.05;
+    line-height: 1;
+    font-weight: 600;
     text-shadow: -2px 1px $color-secondary, 2px 0 $color-tertiary;
     margin-top: -15px;
     @include tablet {
@@ -66,7 +67,9 @@
 
 .card-meta {
   a {
+    color: $white;
     &:hover {
+      color: $white;
       text-decoration: underline;
     }
   }
@@ -99,4 +102,9 @@ textarea.form-control {
     font-size: 32px;
     color: $white;
   }
+}
+
+// footer
+.text-underline-hover:hover {
+  text-decoration: underline;
 }

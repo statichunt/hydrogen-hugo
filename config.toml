@@ -38,7 +38,7 @@ font_scale = "1.2" # default is "majorThird": 1.25
 
 # go to https://fonts.google.com/ to find the font you want to use. select your font and copy only the bold part from the URL. and paste it here.
 # example: "Work+Sans:wght@400;500;600"
-font_primary = "Overpass:wght@400;500;600;700"
+font_primary = "Barlow:wght@400;500;600;700"
 font_primary_type = "serif" # [serif/sans-serif]
 font_secondary = ""
 font_secondary_type = "" # [serif/sans-serif]
@@ -48,8 +48,6 @@ font_icon = "Font Awesome 6 Free" # https://fontawesome.com/v6.0/icons/
 ############################# Plugins ##############################
 
 # CSS Plugins
-[[params.plugins.css]]
-link = "plugins/swiper/swiper-bundle.css"
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/brands.css"
 [[params.plugins.css]]
@@ -62,7 +60,5 @@ link = "plugins/font-awesome/v6/icons.css"
 # link = "plugins/jquery/jquery.js"
 [[params.plugins.js]]
 link = "plugins/bootstrap/bootstrap.bundle.js"
-[[params.plugins.js]]
-link = "plugins/swiper/swiper-bundle.js"
 [[params.plugins.js]]
 link = "plugins/webfont/webfont-loader-2.js"

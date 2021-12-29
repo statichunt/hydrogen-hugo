@@ -13,11 +13,6 @@
 {{ $scripts = $scripts | append (resources.Get "plugins/gallery/glightbox.js" | minify ) }}
 {{ end }}
 
-<!-- google map key -->
-{{ if site.Params.google_map.enable }}
-{{ $scripts = $scripts | append (resources.Get "plugins/maps/google-map.js" | minify ) }}
-{{ end }}
-
 <!-- main script -->
 {{ $scripts = $scripts | append (resources.Get "js/script.js" | minify) }}
 {{ $scripts = $scripts | resources.Concat "js/script.js" | minify | fingerprint "sha512" }}
@@ -100,6 +95,25 @@
       })
     }, 200);
   });
+</script>
+{{ end }}
+
+{{ if site.Params.search }}
+<script>
+// search post
+function searchPost() {
+  let input = document.getElementById('search_post').value
+  input=input.toLowerCase();
+  let x = document.getElementsByClassName('blog-title');
+  for (i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].parentElement.parentElement.parentElement.parentElement.style.display='none';
+    }
+    else {
+      x[i].parentElement.parentElement.parentElement.parentElement.style.display='block';
+    }
+  }
+}
 </script>
 {{ end }}
 

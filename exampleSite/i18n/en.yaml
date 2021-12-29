@@ -13,6 +13,9 @@
 - id: all_posts
   translation: All Posts
   
+- id: related_post
+  translation: Related Posts
+  
 - id: subject
   translation: Subject
   
