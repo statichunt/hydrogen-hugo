@@ -1,37 +1,43 @@
 {{ define "main" }}
 
-{{ with site.Params.google_map }}
-{{ if .enable }}
-<div style="height: 400px;" class="map" id="map" data-latitude="{{ .map_latitude }}" data-longitude="{{ .map_longitude }}" data-marker="{{ .map_marker | relURL }}" data-marker-name="{{ site.Title }}"></div>
-{{ end }}
-{{ end }}
+{{ partial "components/page-header.html" . }}
 
-{{with site.Params.subscription}}
-{{if .enable}}
-<!-- subscription form -->
-<form action="{{ .mailchimp_form_action | safeURL }}" method="post" id="mc-embedded-subscribe-form" novalidate="novalidate">
-  <div class="input-group mb-3 w-75 mx-auto">
-    <input type="email" name="EMAIL" placeholder="Email" class="form-control required email mce_inline_error" id="mce-EMAIL" aria-required="true" autocomplete="off" required>
-      <button class="input-group-text" name="subscribe" id="mc-embedded-subscribe">{{ .button_label }}</button>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="content">
+          {{.Content}}
+        </div>
+
+        <div class="contact-form mt-5 pt-5">
+          <h4>{{i18n `send_me_a_message`}}</h4>
+
+          <form class="row g-4" action="{{site.Params.contact_form_action}}">
+            <div class="col-lg-6">
+              <label for="name" class="form-label">{{ i18n "name" }}</label>
+              <input type="email" class="form-control rounded-0 shadow-none " id="name" placeholder="Alex Smith" required>
+            </div>
+            <div class="col-lg-6">
+              <label for="email" class="form-label">{{ i18n "email" }}</label>
+              <input type="email" class="form-control rounded-0 shadow-none " id="email" placeholder="hello@email.com" required>
+            </div>
+            <div class="col-12">
+              <label for="subject" class="form-label">{{ i18n "subject" }}</label>
+              <input type="email" class="form-control rounded-0 shadow-none " id="subject" placeholder="{{i18n `reasons_for_contact`}}" required>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">{{ i18n "message"}}</label>
+              <textarea class="form-control rounded-0 shadow-none " id="message" rows="4" placeholder="{{i18n `your_message`}}" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary rounded mt-3" aria-label="Send Message">{{ i18n "send_message"}}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <input type="hidden" name="EMAILTYPE" id="mce-EMAILTYPE-0" value="html">
-  <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text"
-      name="{{ .name }}" tabindex="-1"></div>
-</form>
-<div id="mce-responses" class="clear">
-  <div class="response text-white" id="mce-error-response" style="display:none"></div>
-  <div class="response text-white" id="mce-success-response" style="display:none"></div>
-</div>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<!-- /subscription form -->
-{{end}}
-{{end}}
-
-
-{{ if eq .RelPermalink ("contact/" | relURL) }}
-{{ if site.Params.google_map.enable }}
-<script src="https://maps.googleapis.com/maps/api/js?key={{site.Params.google_map.map_api_key}}&libraries=places"></script>
-{{ end }}
-{{ end }}
+</section>
 
 {{ end }}

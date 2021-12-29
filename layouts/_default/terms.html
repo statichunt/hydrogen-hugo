@@ -1,2 +1,25 @@
-<!-- Redirect to homepage -->
-<script>window.location.replace("{{ site.BaseURL | relLangURL }}");</script>
+{{ define "main" }}
+
+{{ partial "components/page-header.html" . }}
+
+<section>
+  <div class="container">
+    <div class="row justify-content-center article-row g-0 text-center">
+      {{ if .Data.Terms }}
+      {{ range .Data.Terms.ByCount }}
+      <div class="col-lg-3 col-md-4">
+        <div class="card bg-transparent border-0 h-100">
+          <div class="card-body p-0 position-relative">
+            <a class="blog-title h5 mb-0 text-capitalize" href="{{.Page.Permalink}}" title="{{.Page.Title}}">{{.Page.Title}} ({{.Count}})</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ else }}
+      <span class="col-12"><h3 class="text-muted">Nothing to Show here!</h3></span>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

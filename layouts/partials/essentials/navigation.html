@@ -1,5 +1,5 @@
 <!-- navbar -->
-<nav class="{{if site.Params.navbar_fixed}}sticky-top{{end}} navigation">  
+<nav class="navigation">  
   <ul class="navbar-nav d-block">
 
     <!-- showing menu first item -->
@@ -10,7 +10,7 @@
 
     <!-- showing categories -->
     {{ range first 5 (site.Taxonomies.categories.ByCount) }}
-    <li class="nav-item">
+    <li class="nav-item opacity-75">
       <a class="nav-link" href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span></a>
     </li>
     {{ end }}

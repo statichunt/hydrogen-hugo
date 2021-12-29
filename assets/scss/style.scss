@@ -2,6 +2,7 @@
 {{ with site.Params.variables }}
 $color-primary: {{.color_primary | default "#777"}};
 $color-secondary: {{.color_secondary | default "#0AA8A7"}};
+$color-tertiary: {{.color_tertiary | default "#f62410"}};
 $text-color: {{.text_color | default "#777"}};
 $text-dark: {{.text_dark | default "#222"}};
 $text-light: {{.text_light | default "#999"}};

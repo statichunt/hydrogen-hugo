@@ -24,7 +24,7 @@
 .btn-primary {
   background: $white;
   color: $black !important;
-  box-shadow: -2px 1px #b942fd, 2px -1px #00ff2b;
+  box-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
   transform: skewX(-12deg);
   border: 0;
   span {

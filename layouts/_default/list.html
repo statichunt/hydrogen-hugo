@@ -1,26 +1,41 @@
 {{ define "main" }}
 
-<!-- widget -->
-{{ $widget:= site.Params.widgets.sidebar }}
-{{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+{{ partial "components/page-header.html" . }}
 
-<!-- start post range -->
-{{ $paginator:= .Paginate .Data.Pages }}
-{{ range $paginator.Pages }}
+<!-- checking blog -->
+{{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
 
-<!-- date format -->
-{{ time.Format ":date_long" .PublishDate }}
+<section>
+  <div class="container">
+    <div class="row article-row g-0">
+      <div class="col-lg-12 search-wrap">
+        <div class="input-group">
+          <span class="input-group-text bg-transparent text-white border-0" id="basic-addon1"><i class="fas fa-search"></i></span>
+          <input type="text" class="form-control shadow-none text-white border-0 rounded-0" type="text" id="search_post" onkeyup="searchPost()" placeholder="{{i18n `search_faq`}}" aria-label="{{i18n `search_faq`}}" aria-describedby="{{i18n `search_faq`}}">
+        </div>
+      </div>
+      {{ range .Data.Pages }}
+        {{ .Render "post" }}
+      {{ end }}
+    </div>
+  </div>
+</section>
 
-<!-- image -->
-{{ partial "images/image.html" (dict "Src" .Params.image "Size" "100x" "Alt" .Title) }}
+<!-- regular page -->
+{{ else }}
 
-{{ end }} 
-<!-- end of post range -->
-
-<!-- pagination -->
-{{ template "_internal/pagination.html" . }}
-
-<!-- custom pagination -->
-{{ partial "components/custom-pagination.html" . }}
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        <div class="content">
+          {{.Content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- /regular page -->
 
 {{ end }}

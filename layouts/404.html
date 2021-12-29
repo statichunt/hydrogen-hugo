@@ -1,11 +1,14 @@
 {{ define "main" }}
 
-<section class="section">
+<section class="section page-not-found">
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        <h1>404 Page Not Found!</h1>
-        <a href="{{site.BaseURL | relLangURL}}" class="btn btn-primary">Back To Home</a>
+      <div class="col-lg-6 mx-auto text-center">
+        <h1>404</h1>
+        <p>Page not found</p>
+        <span>The page you are looking for dosen’t exist an other error occurred. go back,or head over to weebir.com to choose a new direction.</span>
+        <br>
+        <a href="{{site.BaseURL | relLangURL}}" class="btn btn-primary mt-5">Back To Home</a>
       </div>
     </div>
   </div>

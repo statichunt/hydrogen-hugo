@@ -9,7 +9,7 @@
     font-size: 90px;
     word-spacing: 100vw;
     line-height: 1.05;
-    text-shadow: -2px 1px #00fff2, 2px 0px red, -2px -1px blue, 2px 0 #1eff00;
+    text-shadow: -2px 1px $color-secondary, 2px 0 $color-tertiary;
     margin-top: -15px;
     @include tablet {
       font-size: 80px;
@@ -20,14 +20,37 @@
 
 // article card
 .article-row {
-  border-left: 1px solid #2f4050;
-  border-top: 1px solid #2f4050;
+  margin-left: 3px;
+  margin-top: 1px;
   > div {
-    border-right: 1px solid #2f4050;
-    border-bottom: 1px solid #2f4050;
+    border: 1px solid #2f4050;
+    margin-left: -1px;
+    margin-bottom: -1px;
   }
   .card {
     padding: 35px;
+    @include tablet {
+      padding: 25px;
+    }
+  }
+  .search-wrap {
+    width: calc(100% - 2px);
+    @include desktop {
+      width: calc(100% - 1px);
+    }
+    @include tablet {
+      width: 100%;
+    }
+    .input-group {
+      height: 50px;
+      .input-group-text {
+        padding: 0 20px;
+      }
+    }
+    .form-control {
+      transition: .3s;
+      padding: 0 20px;
+    }
   }
 }
 
@@ -35,7 +58,7 @@
   .blog-title {
     &:hover {
       color: rgba($light, .9);
-      text-shadow: -1px 1px #b942fd, 1px 0 #00ff2b;
+      text-shadow: -1px 1px $color-secondary, 1px 0 $color-tertiary;
     }
   }
 }
@@ -45,5 +68,34 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.form-control {
+  border: 1px solid #2f4050;
+  min-height: 50px;
+  padding: 0 20px;
+  color: $white !important;
+  &:focus {
+    border: 1px solid #2f4050;
+    background-color: lighten($body-bg, 5);
+  }
+}
+textarea.form-control {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// page not found
+.page-not-found {
+  h1 {
+    font-size: 100px;
+    font-weight: bold;
+    text-shadow: -2px 1px $color-secondary, 2px 0 $color-tertiary;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 32px;
+    color: $white;
   }
 }

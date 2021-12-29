@@ -4,6 +4,21 @@ window.addEventListener('load', (e) => {
   document.querySelector(".preloader").style.display = "none";
 });
 
+// search post
+function searchPost() {
+  let input = document.getElementById('search_post').value
+  input=input.toLowerCase();
+  let x = document.getElementsByClassName('blog-title');
+  for (i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].parentElement.parentElement.parentElement.parentElement.style.display='none';
+    }
+    else {
+      x[i].parentElement.parentElement.parentElement.parentElement.style.display='block';
+    }
+  }
+}
+
 
 // swiper slider
 const swiper = new Swiper(".swiper", {

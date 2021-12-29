@@ -452,7 +452,7 @@ a:hover {
   // blockquote
   blockquote {
     font-size: 1.3rem !important;
-    padding: 1.5rem 2.5rem;
+    padding: 2rem 2.5rem;
     padding-top: 2.5rem;
     margin: 2rem 0;
     color: $white;
@@ -467,9 +467,9 @@ a:hover {
       left: 0;
       z-index: -1;
       transform: skew(-2deg);
-      background-color: $white;
-      box-shadow: -3px 2px #b942fd, 3px -2px #00ff2b;
-      opacity: .2;
+      background-color: rgba($white, .1);
+      box-shadow: -3px 2px $color-secondary, 3px -2px $color-tertiary;
+      opacity: .8;
     }
     &::after {
       position: absolute;
@@ -478,7 +478,7 @@ a:hover {
       font-size: 7rem;
       opacity: .2;
       left: 20px;
-      text-shadow: -3px 1px #b942fd, 3px -1px #00ff2b;
+      text-shadow: -3px 1px $color-secondary, 3px -1px $color-tertiary;
       pointer-events: none;
     }
 
