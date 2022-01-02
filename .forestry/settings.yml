@@ -15,12 +15,13 @@ sections:
 - type: directory
   path: exampleSite/content/english/categories
   label: Categories (en)
+  create: all
+  match: "**/*"
 - type: directory
   path: exampleSite/content/french/categories
   label: Categories (fr)
-- type: directory
-  path: exampleSite/content/english/blog
-  label: Blog Posts (en)
+  create: all
+  match: "**/*"
 - type: directory
   path: exampleSite/content/english/blog
   label: Blog Post (end)
@@ -66,7 +67,6 @@ sections:
 - type: document
   path: config.toml
   label: Variables & Plugins
-  match: "**/*"
 - type: document
   path: exampleSite/config/_default/languages.toml
   label: Languages
@@ -76,7 +76,6 @@ sections:
 - type: document
   path: exampleSite/config/_default/menus.fr.toml
   label: Menu (fr)
-  match: "**/*"
 upload_dir: exampleSite/static/images
 public_path: "/images"
 front_matter_path: ''
