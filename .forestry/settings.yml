@@ -12,14 +12,6 @@ sections:
 - type: document
   path: exampleSite/content/french/_index.md
   label: Homepage (fr)
-- type: heading
-  label: Blog
-- type: document
-  path: exampleSite/content/english/blog/_index.md
-  label: Blog Page (en)
-- type: document
-  path: exampleSite/content/french/blog/_index.md
-  label: Blog Page (fr)
 - type: directory
   path: exampleSite/content/english/categories
   label: Categories (en)
@@ -30,16 +22,16 @@ sections:
   path: exampleSite/content/english/blog
   label: Blog Posts (en)
 - type: directory
-  path: exampleSite/content/french/blog
-  label: Blog Posts (fr)
+  path: exampleSite/content/english/blog
+  label: Blog Post (end)
   create: documents
   match: "**/*"
   exclude: _index.md
   templates:
   - post
 - type: directory
-  path: exampleSite/content/english/blog
-  label: Blog Post (fr)
+  path: exampleSite/content/french/blog
+  label: Blog Posts (fr)
   create: documents
   match: "**/*"
   exclude: _index.md
