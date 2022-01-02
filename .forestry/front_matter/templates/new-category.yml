@@ -1,0 +1,10 @@
+---
+label: new-category
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: color
+  label: color
