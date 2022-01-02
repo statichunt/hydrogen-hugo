@@ -41,11 +41,17 @@ sections:
 - type: heading
   label: Others Page
 - type: document
-  path: exampleSite/content/english/contact/_index.md
+  path: exampleSite/content/english/contact.md
   label: Contact (en)
 - type: document
-  path: exampleSite/content/french/contact/_index.md
+  path: exampleSite/content/french/contact.md
   label: Contact (fr)
+- type: document
+  path: exampleSite/content/english/elements.md
+  label: Elements (en)
+- type: document
+  path: exampleSite/content/french/elements.md
+  label: Elements (fr)
 - type: heading
   label: All Pages
 - type: directory
