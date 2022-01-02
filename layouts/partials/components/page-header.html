@@ -17,33 +17,56 @@
             </li>
             <!-- showing menu first item -->
 
+            {{ if eq .Section "categories" }}
             <!-- showing categories -->
             {{ $currentPage := . }}
             {{ range site.Taxonomies.categories.ByCount }}
-            {{ $menuURL := .Page.RelPermalink | relLangURL }}
-            {{ $pageURL:= $currentPage.RelPermalink | relLangURL }}
+            {{ $menuURL := .Page.RelPermalink }}
+            {{ $pageURL:= $currentPage.RelPermalink }}
             {{ $active := eq $menuURL $pageURL }}
             <li class="nav-item {{ if $active }}active{{ end }}">
               <a class="nav-link" href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span></a>
             </li>
             {{ end }}
             <!-- showing categories -->
-
-            {{ if .IsTranslated }}
-            <!-- Language List -->
-            <li class="nav-item dropdown">
-              {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
-              <button class="dropdown-toggle bg-transparent border-0 nav-link" type="button" id="select-language" data-bs-toggle="dropdown" aria-expanded="false">{{ .LanguageName }}</button>
-              {{ end }}{{ end }}{{ end }}{{ end }}
-              <ul class="dropdown-menu" aria-labelledby="select-language">
-                {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
-                  <li id="{{ $translation.Language }}"><a class="dropdown-item active" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
-                {{ else }}
-                  <li id="{{ $translation.Language }}"><a class="dropdown-item" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
-                {{ end }}{{ end }}{{ end }}{{ end }}
-              </ul>
-            </li>
+            {{ else }}
+              <!-- showing menus -->
+              {{ $currentPage := . }}
+              {{ range site.Menus.main }}
+              {{ $menuURL := .URL | relLangURL }}
+              {{ $pageURL:= $currentPage.RelPermalink }}
+              {{ $active := eq $menuURL $pageURL }}
+              {{ if .HasChildren }}
+              <li class="nav-item dropdown 
+              {{ range .Children }}
+              {{ $childURL := .URL | relLangURL }}
+              {{ $active := eq $childURL $pageURL }}
+              {{ if $active }}active{{ end }}
+              {{ end }}">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {{ .Name }}
+                </a>
+                <div class="dropdown-menu">
+                  {{ range .Children }}
+                  {{ $childURL := .URL | relLangURL }}
+                  {{ $active := eq $childURL $pageURL }}
+                  <a class="dropdown-item {{ if $active }}active{{ end }}" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+                    href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
+                  {{ end }}
+                </div>
+              </li>
+              {{ else }}
+              <li class="nav-item {{ if $active }}active{{ end }}">
+                <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+                  href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}"><span>{{.Name}}</span></a>
+              </li>
+              {{ end }}
+              {{ end }}
+              <!-- showing menus -->
             {{ end }}
+
+            {{ partial "components/translation.html" . }}
           </ul>
         </nav>
         <!-- /navigation -->

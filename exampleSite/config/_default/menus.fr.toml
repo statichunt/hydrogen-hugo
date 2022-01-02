@@ -2,5 +2,10 @@
 # main menu
 [[main]]
 name = "Contact"
-url = "contact"
+url = "contact/"
 weight = 1
+
+[[main]]
+name = "Elements"
+url = "elements/"
+weight = 2

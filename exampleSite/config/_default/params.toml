@@ -1,18 +1,17 @@
 #################### default parameters ################################
 # favicon
-favicon = "images/favicon.png"
+favicon = "images/developer.jpg"
 # logo
 logo = "images/favicon.png"
-logo_dark = "images/favicon.png"
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_width is not work with .svg file
 logo_width = "100px"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
-logo_text = "Boilerplate"
-# navbar fixed to top
-navbar_fixed = false
+logo_text = "Hydrogen"
+# preloader
+preloader = true
 # search
 search = false
 # main sections
@@ -27,18 +26,10 @@ google_tag_manager = "" # example: G-XXXXXXXXXX
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script= ""
 
-# Preloader
-[preloader]
-enable = true
-preloader = "" # use jpg, png, svg or gif format.
-
 # contact info
 [contact_info]
 # contact form action
 contact_form_action = "#" # contact form works with https://airform.io
-address = "9567 Turner Trace Apt. BC C3G8A4"
-mobile = "+211234565523"
-email = "info@email.com"
 
 # Subscription
 [subscription]

@@ -74,6 +74,20 @@ a:hover {
   border-color: $border-color !important;
 }
 
+// social-links
+.social-links li a {
+  font-size: 20px;
+  color: rgba($white, 1);
+  position: relative;
+  z-index: 1;
+  text-shadow: -1px 1px $color-secondary, 1px -1px $color-tertiary;
+  margin-right: 5px;
+  &:hover {
+    color: rgba($white, 1);
+    text-shadow: 1px 2px $color-primary;
+  }
+}
+
 /* overlay */
 .overlay {
   position: relative;
@@ -274,9 +288,10 @@ a:hover {
         height: .5rem;
         width: .5rem;
         border-radius: 50%;
-        background: $color-primary;
+        background: $white;
         left: 3px;
-        top: .5rem;
+        top: 11px;
+        box-shadow: -1px 1px $color-secondary, 1px -1px $color-tertiary;
       }
     }
   }
@@ -544,6 +559,7 @@ a:hover {
     }
   }
 }
+
 .tab-item,
 .tab-nav-button,
 .gist .gist-meta a,

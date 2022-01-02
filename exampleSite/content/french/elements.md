@@ -75,6 +75,11 @@ window.addEventListener('load', (e) => {
 ```
 <hr>
 
+###### Github Gist
+{{< gist spf13 7896402 >}}
+
+<hr>
+
 ##### Button
 {{< button "Button" "#!">}}
 <hr>

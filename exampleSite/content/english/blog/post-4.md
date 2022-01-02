@@ -1,7 +1,6 @@
 ---
 title: "Github Repository Controls"
 description: "meta description"
-image: "images/posts/post-4.png"
 date: 2021-12-14T18:19:25+06:00
 categories: ["github"]
 draft: false

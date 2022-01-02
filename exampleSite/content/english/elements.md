@@ -4,8 +4,6 @@ description: "Some of our Team members"
 draft: false
 ---
 
-{{< gist spf13 7896402 >}}
-
 # H1 Heading 
 ## H2 Heading 
 ### H3 Heading 
@@ -75,6 +73,11 @@ window.addEventListener('load', (e) => {
   document.querySelector(".preloader").style.display = "none";
 });
 ```
+<hr>
+
+###### Github Gist
+{{< gist spf13 7896402 >}}
+
 <hr>
 
 ##### Button

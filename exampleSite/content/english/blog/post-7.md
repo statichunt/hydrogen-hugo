@@ -1,7 +1,6 @@
 ---
 title: "Robotic world is growing very fast"
 description: "meta description"
-image: "images/posts/post-1.png"
 date: 2021-11-08T18:19:25+06:00
 categories: ["technology"]
 draft: false

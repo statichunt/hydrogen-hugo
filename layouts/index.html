@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <div class="row gx-5 gy-5">
+        <div class="row gx-5 gy-4">
           <div class="col-lg-4 col-md-5 col-sm-8">
             {{ partial "images/image.html" (dict "Src" .Params.image "Class" "img-fluid intro-image" "Alt" .Params.title "Size" "374x") }}
           </div>
@@ -13,7 +13,7 @@
               <h1 class="title glitch-text mb-4" data-text="{{ .Params.name | markdownify}}">{{ .Params.name | markdownify}}</h1>
               <p class="lead text-primary">{{ .Params.designation | markdownify }}</p>
               {{ with site.Params.social }}
-              <ul class="list-inline">
+              <ul class="list-inline social-links">
                 {{ range . }}
                   <li class="list-inline-item me-2 mb-1">
                     <a class="p-1" href="{{ .link | safeURL }}" title="title" target="_blank" rel="nofollow">
@@ -24,6 +24,9 @@
               </ul>
               {{ end }}
             </div>
+          </div>
+          <div class="col-12">
+            <p>{{ .Params.description | markdownify }}</p>
           </div>
         </div>
       </div>

@@ -10,10 +10,13 @@
     word-spacing: 100vw;
     line-height: 1;
     font-weight: 600;
-    text-shadow: -2px 1px $color-secondary, 2px 0 $color-tertiary;
+    text-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
     margin-top: -15px;
+    @include desktop-lg {
+      font-size: 72px;
+    }
     @include tablet {
-      font-size: 80px;
+      font-size: 70px;
       margin-top: 0;
     }
   }
@@ -24,7 +27,7 @@
   margin-left: 3px;
   margin-top: 1px;
   > div {
-    border: 1px solid #2f4050;
+    border: 1px solid $border-color;
     margin-left: -1px;
     margin-bottom: -1px;
   }
@@ -76,12 +79,12 @@
 }
 
 .form-control {
-  border: 1px solid #2f4050;
+  border: 1px solid $border-color;
   min-height: 50px;
   padding: 0 20px;
   color: $white !important;
   &:focus {
-    border: 1px solid #2f4050;
+    border: 1px solid $border-color;
     background-color: lighten($body-bg, 5);
   }
 }
