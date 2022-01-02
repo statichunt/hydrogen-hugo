@@ -13,18 +13,8 @@ sections:
   path: exampleSite/content/french/_index.md
   label: Homepage (fr)
 - type: directory
-  path: exampleSite/content/english/categories
-  label: Categories (en)
-  create: all
-  match: "**/*"
-- type: directory
-  path: exampleSite/content/french/categories
-  label: Categories (fr)
-  create: all
-  match: "**/*"
-- type: directory
   path: exampleSite/content/english/blog
-  label: Blog Post (end)
+  label: Blog Post (en)
   create: documents
   match: "**/*"
   exclude: _index.md
@@ -38,6 +28,16 @@ sections:
   exclude: _index.md
   templates:
   - post
+- type: directory
+  path: exampleSite/content/english/categories
+  label: Categories (en)
+  create: all
+  match: "**/*"
+- type: directory
+  path: exampleSite/content/french/categories
+  label: Categories (fr)
+  create: all
+  match: "**/*"
 - type: heading
   label: Others Page
 - type: document
