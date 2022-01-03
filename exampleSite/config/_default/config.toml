@@ -1,6 +1,6 @@
 ######################## default configuration ####################
-baseURL = "https://gethugothemes.com/hydrogen"
-title = "Hydrogen - Developer Portfolio Template"
+baseURL = "https://gethugothemes.com/hydrogen/"
+title = "Hydrogen - Developer Blog Theme"
 theme = "hydrogen"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "UTC"
@@ -13,8 +13,8 @@ googleAnalytics = "" # example: UA-123-45, for more info, read the article https
 # disqus short name
 disqusShortname = "themefisher-template" # we use disqus to show comments in blog posts . To install disqus please follow this tutorial https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/
 # disable language
-disableLanguages = [] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
-hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
+disableLanguages = []  # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
+hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 
 ############################# Modules ##############################
 [module]
@@ -46,7 +46,7 @@ maxAge = "720h"
 ############################# Markup ###############################
 [markup]
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
 
 [markup.highlight]
 style = 'dracula' # see https://xyproto.github.io/splash/docs/all.html
