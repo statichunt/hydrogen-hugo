@@ -1,9 +1,9 @@
 ---
 title: "My work from home workstation"
 description: "meta description"
-image: "images/posts/post-5.png"
 date: 2021-12-13T18:19:25+06:00
 categories: ["workstation"]
+image: ""
 draft: false
 ---
 

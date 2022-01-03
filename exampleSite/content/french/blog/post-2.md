@@ -1,9 +1,9 @@
 ---
 title: "What you need to know about Programming"
 description: "meta description"
-image: "images/posts/post-2.png"
 date: 2021-12-16T18:19:25+06:00
 categories: ["programming"]
+image: ""
 draft: false
 ---
 

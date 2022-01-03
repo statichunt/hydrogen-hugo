@@ -32,15 +32,36 @@
 .v[data-class="v"] .vwrap .vheader .vinput:focus {border-bottom-color: {{site.Params.variables.color_primary | default "#009183"}}}
 .v[data-class="v"] .vbtn:hover {color: {{site.Params.variables.color_primary | default "#009183"}};border-color: {{site.Params.variables.color_primary | default "#009183"}}}
 .v[data-class="v"] .vempty {padding: 8px}
+.v[data-class="v"] .vinput {
+  font-size: initial;
+  color: {{site.Params.variables.white | default "white"}};
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.v[data-class="v"] .vicon {
+  fill: #c9c9c9;
+}
+.v[data-class="v"] .vbtn {
+  color: #c9c9c9;
+}
+.v[data-class="v"] .vinput::-webkit-input-placeholder {
+  color: #c9c9c9;
+}
+.v[data-class="v"] .vinput:-ms-input-placeholder {
+  color: #c9c9c9;
+}
+.v[data-class="v"] .vinput::placeholder {
+  color: #c9c9c9;
+}
 </style>
 
 <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
-<div id="vcomment"></div>
+<div class="mt-5" id="vcomment"></div>
 <noscript>Please enable JavaScript to view the comments</noscript>
 
 {{if or (eq .appId "") (eq .appKey "")}}
-<p class="text-center mb-5">"appId" and "appKey" is required, otherwise comment won't work. <br><a href="https://valine.js.org/en/quickstart.html" target="_blank">Get your APP-ID and APP-Key</a></p>
+<p class="text-center mb-5">"appId" and "appKey" is required, otherwise comment won't work. <br><a class="text-underline-hover" href="https://valine.js.org/en/quickstart.html" target="_blank">Get your APP-ID and APP-Key</a></p>
 {{end}}
 
 <script>

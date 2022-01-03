@@ -1,9 +1,9 @@
 ---
 title: "Why you need to learn PHP"
 description: "meta description"
-image: "images/posts/post-6.png"
 date: 2021-10-24T18:19:25+06:00
 categories: ["programming"]
+image: ""
 draft: false
 ---
 

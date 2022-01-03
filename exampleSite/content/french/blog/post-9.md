@@ -3,6 +3,7 @@ title: "What is web hosting? A quick guide for new websites"
 description: "meta description"
 date: 2021-08-16T18:19:25+06:00
 categories: ["github"]
+image: ""
 draft: false
 ---
 

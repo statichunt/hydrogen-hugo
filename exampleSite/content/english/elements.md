@@ -26,7 +26,7 @@ Did you come here for something in particular or just general Riker-bashing? And
 
 <hr>
 
-##### Emphasis :
+##### Emphasis
 
 1. Did you come here for something in particular or just general
 2. Did you come here for something in **particular**
@@ -53,7 +53,7 @@ Did you come here for something in particular or just general Riker-bashing? And
 - Placerat nec tortor vel, blandit vestibulum libero. Morbi sollicitudin viverra justo
 <hr>
 
-##### Code and Syntax Highlighting :
+##### Code and Syntax Highlighting
 
 ###### HTML
 
@@ -111,7 +111,7 @@ window.addEventListener("load", (e) => {
 
 <hr>
 
-##### Notice :
+##### Notice
 
 {{< notice "note" >}}
 This is a simple note.
@@ -131,7 +131,7 @@ This is a simple warning.
 
 <hr>
 
-##### Tab :
+##### Tab
 
 {{< tabs >}}
 {{< tab "Tab 1" >}}
@@ -160,7 +160,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 <hr>
 
-##### Table :
+##### Table
 
 |   #   |    First     |     Last     |    Handle    |
 | :---: | :----------: | :----------: | :----------: |
@@ -170,7 +170,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 <hr>
 
-##### Collapse :
+##### Collapse
 
 {{< collapse "Why should you need to do this?" >}}
 
@@ -192,14 +192,23 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
 - Lorem ipsum dolor sit amet consectetur
 {{< /collapse >}}
+
+
+<hr>
+
+##### Image
+{{< image src="images/posts/post-2.jpg" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid w-100" title="image title"  webp="false" >}}
 <hr>
 
 ##### Gallery
 
 {{< gallery dir="images/gallery" class="" zoomable="true" >}}
 
-<hr>
-
-##### Youtube :
+### Youtube video
 
 {{< youtube ResipmZmpDU >}}
+
+<hr>
+
+### Custom video
+{{< video src="https://www.w3schools.com/html/mov_bbb.mp4" width="500" height="auto" autoplay="false" loop="false" muted="false" controls="true" class="" >}}

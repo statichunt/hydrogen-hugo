@@ -1,14 +1,14 @@
 <div class="col-lg-4 col-md-6">
   <article class="article card bg-transparent border-0 h-100">
     <div class="card-body p-0 position-relative">
-      {{ range .Params.categories }}
-      {{ with site.GetPage (printf "categories/%s" (urlize .)) }}
-      <div class="card-meta">
-        <a class="text-capitalize" style="color:{{ .Params.color }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <div class="card-meta d-inline-block">
+        {{ range $i, $e := .Params.categories }}
+        {{ with site.GetPage (printf "categories/%s" (urlize .)) }}
+          <a class="text-capitalize {{if ne $i 0}} ms-2{{end}}" style="color:{{ .Params.color }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+        {{ end }}
       </div>
-      {{ end }}
-      {{ end }}
-      <span class="d-inline-block my-3">{{ .PublishDate.Format "Jan 02, 2006" }}</span>
+      <span class="d-block my-3">{{ .PublishDate.Format "Jan 02, 2006" }}</span>
       <h3 class="h5">
         <a class="blog-title" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a>
       </h3>

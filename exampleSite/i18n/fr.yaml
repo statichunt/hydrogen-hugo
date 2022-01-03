@@ -1,0 +1,143 @@
+- id: read_more
+  translation: Apprendre encore plus
+  
+- id: back_to_home
+  translation: De retour à la maison
+  
+- id: send_me_a_message
+  translation: Send me a message
+  
+- id: all_posts
+  translation: Tous les Articles
+  
+- id: related_post
+  translation: Articles Similaires
+  
+- id: subject
+  translation: Subject
+  
+- id: name
+  translation: Nom
+  
+- id: reasons_for_contact
+  translation: Raisons du contact
+  
+- id: search_blog
+  translation: Rechercher dans le blog
+  
+- id: message
+  translation: Message
+  
+- id: your_message
+  translation: Votre message
+  
+- id: send_message
+  translation: Envoyer le message
+
+- id: phone
+  translation: Numéro de téléphone
+
+- id: email
+  translation: E-mail
+
+- id: contact_form
+  translation: Formulaire de contact
+
+- id: send
+  translation: envoyer le message
+
+- id: page_not_found
+  translation: Page non trouvée
+
+- id: page_not_found_description
+  translation: La page que vous recherchez n'existe pas, une autre erreur s'est produite. revenez en arrière ou rendez-vous sur weebir.com pour choisir une nouvelle direction.
+
+- id: min_read
+  translation: min à lire
+
+- id: nothing_to_show_here
+  translation: Rien à montrer ici !
+
+- id: loading
+  translation: Chargement
+
+- id: valine_nickname
+  translation: Surnom
+
+- id: valine_mail
+  translation: E-mail
+
+- id: valine_website
+  translation: Website(http://)
+
+- id: valine_comment_placeholder
+  translation: Écrivez votre commentaire ici
+
+- id: valine_nickFail
+  translation: Le pseudonyme ne peut pas être inférieur à 3 octets.
+
+- id: valine_mailFail
+  translation: Merci de confirmer votre adresse e-mail.
+
+- id: valine_emptyComment
+  translation: Pas encore de commentaire.
+
+- id: valine_submit
+  translation: Soumettre
+
+- id: valine_reply
+  translation: Répondre
+
+- id: valine_cancelReply
+  translation: Annuler la réponse
+
+- id: valine_comments
+  translation: commentaires
+
+- id: valine_cancel
+  translation: Annuler
+
+- id: valine_confirm
+  translation: Confirmer
+
+- id: valine_continue
+  translation: Continuez
+
+- id: valine_emptyComment
+  translation: Pas encore de commentaire.
+
+- id: valine_more
+  translation: Charger plus...
+
+- id: valine_preview
+  translation: Aperçu
+
+- id: valine_emoji
+  translation: Emoji
+
+- id: valine_expand
+  translation: Voir plus....
+
+- id: valine_seconds
+  translation: il y a quelques instants
+
+- id: valine_minutes
+  translation: il y a quelques minutes
+
+- id: valine_hours
+  translation: il y a des heures
+
+- id: valine_days
+  translation: il y a quelques jours
+
+- id: valine_now
+  translation: juste maintenant
+
+- id: valine_uploading
+  translation: Téléchargement ...
+
+- id: valine_uploadDone
+  translation: Téléchargement terminé !
+
+- id: valine_busy
+  translation: Soumettre est occupé, veuillez patienter...

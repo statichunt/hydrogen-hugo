@@ -1,9 +1,9 @@
 ---
 title: "Drone Software and Development"
 description: "meta description"
-image: "images/posts/post-8.png"
 date: 2021-09-16T18:19:25+06:00
 categories: ["technology"]
+image: ""
 draft: false
 ---
 

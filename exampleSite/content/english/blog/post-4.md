@@ -3,6 +3,7 @@ title: "Github Repository Controls"
 description: "meta description"
 date: 2021-12-14T18:19:25+06:00
 categories: ["github"]
+image: ""
 draft: false
 ---
 

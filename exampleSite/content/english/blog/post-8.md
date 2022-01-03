@@ -3,6 +3,7 @@ title: "Drone Software and Development"
 description: "meta description"
 date: 2021-09-16T18:19:25+06:00
 categories: ["technology"]
+image: ""
 draft: false
 ---
 

@@ -5,10 +5,10 @@
     <div class="row">
       <div class="col-lg-6 mx-auto text-center">
         <h1>404</h1>
-        <p>Page not found</p>
-        <span>The page you are looking for dosen’t exist an other error occurred. go back,or head over to weebir.com to choose a new direction.</span>
+        <p>{{i18n `page_not_found`}}</p>
+        <span>{{i18n `page_not_found_description`}}</span>
         <br>
-        <a href="{{site.BaseURL | relLangURL}}" class="btn btn-primary mt-5">Back To Home</a>
+        <a href="{{site.BaseURL | relLangURL}}" class="btn btn-primary mt-5">{{i18n `back_to_home`}}</a>
       </div>
     </div>
   </div>

@@ -9,6 +9,8 @@ search = false
 mainSections = ["blog"]
 # image gallery shortcode
 image_gallery = true
+# contact form action
+contact_form_action = "#" # contact form works with https://airform.io
 # copyright
 theme_copyright = true
 copyright = "Copyright by your_company"
@@ -17,18 +19,13 @@ google_tag_manager = "" # example: G-XXXXXXXXXX
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
 
-# contact info
-[contact_info]
-# contact form action
-contact_form_action = "#" # contact form works with https://airform.io
-
 # Crisp Chat
 [crisp_chat]
-enable = false
+enable = true
 crisp_website_id = "75ea92c2-a135-4f5c-8b44-54f9ddc30745" # replace this code with yours
 # Check this video tutorial to get your crisp website ID - https://www.youtube.com/watch?v=nW5UX6iVdFc
 
-# Valine Comment
+# Valine Comment (if disqusShortname is not set in config.toml, Valine will be used)
 [valine_comment]
 enable = true
 appId = ""    # replace this code with yours [ex: QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI]
