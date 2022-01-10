@@ -1,17 +1,23 @@
-// Preloader js
-window.addEventListener('load', (e) => {
-  'use strict';
-  document.querySelector(".preloader").style.display = "none";
-});
+(function () {
+  "use strict";
 
+  // Preloader js
+  window.addEventListener("load", (e) => {
+    document.querySelector(".preloader").style.display = "none";
+  });
+})();
 
 // tab shortcode
 function switchTab(tabGroup, tabId) {
-  let allTabItems = document.querySelectorAll("[data-tab-group='" + tabGroup + "']");
-  let targetTabItems = document.querySelectorAll("[data-tab-group='" + tabGroup + "'][data-tab-item='" + tabId + "']");
+  let allTabItems = document.querySelectorAll(
+    "[data-tab-group='" + tabGroup + "']"
+  );
+  let targetTabItems = document.querySelectorAll(
+    "[data-tab-group='" + tabGroup + "'][data-tab-item='" + tabId + "']"
+  );
 
-  allTabItems.forEach(item=>item.classList.remove("active"))
-  targetTabItems.forEach(item=>item.classList.add("active"))
+  allTabItems.forEach((item) => item.classList.remove("active"));
+  targetTabItems.forEach((item) => item.classList.add("active"));
   var isButtonEvent = event != undefined;
 
   if (isButtonEvent) {
@@ -30,7 +36,10 @@ function switchTab(tabGroup, tabId) {
         var tabSelections = {};
       }
       tabSelections[tabGroup] = tabId;
-      window.localStorage.setItem("tabSelections", JSON.stringify(tabSelections));
+      window.localStorage.setItem(
+        "tabSelections",
+        JSON.stringify(tabSelections)
+      );
     }
   }
 }

@@ -23,7 +23,7 @@
 {{ if .enable }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <div id="js-cookie-box" class="cookie-box cookie-box-hide">
-	{{.content | markdownify}}<span id="js-cookie-button" class="btn btn-sm btn-outline-primary ms-2">{{.button}}</span>
+	{{.content | markdownify}}<span id="js-cookie-button" class="btn btn-sm btn-primary ms-3"><span>{{.button}}</span></span>
 </div>
 <script type="application/javascript">
   const cookieBox = document.getElementById('js-cookie-box');
@@ -49,7 +49,7 @@
   text-align: center;
   z-index: 9999;
   padding: 1rem 2rem;
-  background: rgb(71, 71, 71);
+  background: rgb(56 72 92);
   transition: all .75s cubic-bezier(.19, 1, .22, 1);
   color: #fdfdfd;
 }

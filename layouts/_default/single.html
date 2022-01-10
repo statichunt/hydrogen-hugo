@@ -3,7 +3,7 @@
 <!-- checking blog -->
 {{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
 
-<section class="section-sm">
+<section class="section-sm {{if not site.Params.related_post}}pb-0{{end}} ">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -55,6 +55,7 @@
 </section>
 
 <!-- related post -->
+{{ if site.Params.related_post }}
 <div class="container">
   <div class="row">
     <div class="col-12 mb-4">
@@ -69,6 +70,7 @@
     {{ end }}
   </div>
 </div>
+{{ end }}
 <!-- /related post -->
 
 
