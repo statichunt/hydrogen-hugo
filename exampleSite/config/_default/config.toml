@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://gethugothemes.com/hydrogen/"
+baseURL = "https://demo.gethugothemes.com/hydrogen/"
 title = "Hydrogen - Developer Blog Theme"
 theme = "hydrogen"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
