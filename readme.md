@@ -1,7 +1,7 @@
-# <h1 align=center>Andromeda Light | <a target="_blank" href="https://demo.gethugothemes.com/hydrogen/" rel="nofollow">Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethugothemes.com%2Fhydrogen%2F">Page Speed (92%)</a></h1>
+# <h1 align=center>Andromeda Light | <a target="_blank" href="https://demo.gethugothemes.com/hydrogen/" rel="nofollow">Demo</a></h1>
 
 <p align=center>
-  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.83.1" alt="Contributors">
+  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.89.2" alt="Contributors">
     <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.83.1&color=f00&logo=hugo" />
   </a>
 
