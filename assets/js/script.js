@@ -3,7 +3,9 @@
 
   // Preloader js
   window.addEventListener("load", (e) => {
-    document.querySelector(".preloader").style.display = "none";
+    if (typeof(element) != 'undefined' && element != null) {
+      document.querySelector(".preloader").style.display = "none";
+    }
   });
 })();
 
