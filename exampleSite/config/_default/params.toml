@@ -2,7 +2,7 @@
 # favicon
 favicon = "images/developer.jpg"
 # preloader
-preloader = true
+preloader = false
 # search
 search = false
 # main sections

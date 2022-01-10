@@ -22,10 +22,10 @@ AUTHOR WEBSITE: https://gethugothemes.com
 <body>
 	<!-- cache partial only in production -->
 	{{ if hugo.IsProduction }}
-	{{ if ne .IsHome }}{{ partial "components/preloader.html" . }}{{end}}
+	{{ partialCached "components/preloader.html" . }}
 	{{ partialCached "datasets/gtm-noscript.html" . }}
 	{{ else }}
-	{{ if ne .IsHome }}{{ partial "components/preloader.html" . }}{{end}}
+	{{ partial "components/preloader.html" . }}
 	{{ end }}
 
 	<main>
