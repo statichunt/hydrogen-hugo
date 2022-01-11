@@ -39,7 +39,8 @@
 
 <section class="pt-4">
   <div class="container">
-    <div class="row article-row g-0">
+    {{ $totalPost := len (where site.RegularPages "Section" "in" site.Params.mainSections) }}
+    <div class="row article-row g-0 {{ if lt $totalPost 3 }}justify-content-center{{end}}">
       {{ if site.Params.search }}
       <div class="col-lg-12 search-wrap">
         <div class="input-group">

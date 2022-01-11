@@ -79,11 +79,9 @@
 {{ if site.Params.image_gallery }}
 <script>
   window.addEventListener('load', (e) => {
+    // gallery init
+    const lightbox = GLightbox();
     window.setTimeout(() => {
-      // gallery init
-      if(document.querySelector('.zoomable')){
-        const lightbox = GLightbox();
-      }
       // justified gallery init
       const justify_scale = screen.height * 0.25;
       let items = document.querySelectorAll('.gallery .gallery-item');
@@ -119,5 +117,5 @@ function searchPost() {
 
 <!-- service worker -->
 <script>
-  if ('serviceWorker' in navigator){navigator.serviceWorker.register({{`/service-worker.js` | relURL}});}
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register({{`/service-worker.js` | absURL}});}
 </script>

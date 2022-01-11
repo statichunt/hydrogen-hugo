@@ -62,8 +62,8 @@
       <h2 class="h3 text-center">{{i18n `related_post`}}</h2>
     </div>
   </div>
-  <div class="row article-row g-0">
-    {{ $related := (where site.RegularPages "Section" "blog") | intersect (where site.Pages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) }}
+  {{ $related := (where site.RegularPages "Section" "blog") | intersect (where site.Pages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) }}
+  <div class="row article-row g-0 justify-content-center">
     {{ range first 3 $related }}
     <!-- post card here -->
     {{ .Render "post" }}
