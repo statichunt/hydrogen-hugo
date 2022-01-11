@@ -117,5 +117,5 @@ function searchPost() {
 
 <!-- service worker -->
 <script>
-  if ('serviceWorker' in navigator){navigator.serviceWorker.register({{`/service-worker.js` | absURL}});}
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("{{site.BaseURL}}service-worker.js");}
 </script>
