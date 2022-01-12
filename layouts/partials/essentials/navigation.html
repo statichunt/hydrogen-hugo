@@ -1,10 +1,10 @@
 <!-- navbar -->
 <nav class="navigation navbar justify-content-center py-0">  
   <ul class="navbar-nav d-block">
-
+    {{ $base := print (site.BaseURL | relLangURL) `/` }}
     <!-- showing menu first item -->
     <li class="nav-item {{ if $.IsHome }}active{{ end }}">
-      <a class="nav-link" href="{{site.BaseURL | relLangURL}}/"><span>{{i18n `all_posts`}}</span></a>
+      <a class="nav-link" href="{{ replaceRE $base `/` `/` }}"><span>{{i18n `all_posts`}}</span></a>
     </li>
     <!-- showing menu first item -->
 

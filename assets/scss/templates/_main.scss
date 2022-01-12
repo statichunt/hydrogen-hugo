@@ -6,6 +6,9 @@
   @include mobile {
     padding-top: .7em;
   }
+  @include desktop {
+    padding-bottom: 0;
+  }
   .title {
     color: $white;
     position: relative;
