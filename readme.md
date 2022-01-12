@@ -1,4 +1,4 @@
-# <h1 align=center>Andromeda Light | <a target="_blank" href="https://demo.gethugothemes.com/hydrogen/" rel="nofollow">Demo</a></h1>
+# <h1 align=center>Hydrogen | <a target="_blank" href="https://demo.gethugothemes.com/hydrogen/" rel="nofollow">Demo</a></h1>
 
 <p align=center>
   <a href="https://github.com/gohugoio/hugo/releases/tag/v0.89.2" alt="Contributors">
@@ -37,8 +37,6 @@ $ cd hydrogen/exampleSite/
 # Start local dev server
 $ hugo server --themesDir ../..
 ```
-
-Or Check out [Full Documentation](https://docs.gethugothemes.com/andromeda/?ref=github).
 
 ## Content Management System
 
