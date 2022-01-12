@@ -4,7 +4,7 @@
   "lang": "{{ site.LanguageCode | default `en-us` }}",
   "display": "fullscreen",
   "orientation" : "portrait",
-  "start_url": "{{ site.BaseURL | relLangURL }}?utm_source=web_app_manifest",
+  "start_url": "{{ site.BaseURL | absURL }}?utm_source=web_app_manifest",
   "background_color": "{{ site.Params.variables.body_color | default `#fff`}}",
   "theme_color": "{{ site.Params.variables.color_primary | default `#000`}}",
 
