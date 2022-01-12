@@ -479,7 +479,7 @@ a:hover {
       z-index: -1;
       transform: skew(-2deg);
       background-color: rgba($white, .1);
-      box-shadow: -3px 2px $color-secondary, 3px -2px $color-tertiary;
+      box-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
       opacity: .8;
     }
     &::after {
@@ -489,8 +489,14 @@ a:hover {
       font-size: 7rem;
       opacity: .2;
       left: 20px;
-      text-shadow: -3px 1px $color-secondary, 3px -1px $color-tertiary;
+      text-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
       pointer-events: none;
+    }
+    @include mobile {
+      &::before,
+      &::after {
+        transform: skew(0deg);
+      }
     }
 
     p {
@@ -513,6 +519,10 @@ a:hover {
   }
 }
 
+// html5 video style
+video {
+  max-width: 100%;
+}
 
 /* blog */
 .pagination {
