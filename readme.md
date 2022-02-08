@@ -32,7 +32,7 @@
 git clone git@github.com:statichunt/hydrogen-hugo.git
 
 # cd in the project directory
-$ cd hydrogen/exampleSite/
+$ cd hydrogen-hugo/exampleSite/
 
 # Start local dev server
 $ hugo server --themesDir ../..
