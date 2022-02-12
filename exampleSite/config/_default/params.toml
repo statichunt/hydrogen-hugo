@@ -1,6 +1,6 @@
 #################### default parameters ################################
 # favicon
-favicon = "images/developer.jpg"
+favicon = "images/developer.png"
 # preloader
 preloader = false
 # search
@@ -47,7 +47,7 @@ enableQQ = false # https://valine.js.org/en/configuration.html#enableQQ
 keywords = ["Hydrogen", "Hugo", "Themefisher", "GetHugoThemes", "Statichunt"]
 description = "This is meta description"
 author = "Statichunt"
-image = "images/developer.jpg"                                                # this image will be used as fallback if a page has no image of its own
+image = "images/developer.png"                                                # this image will be used as fallback if a page has no image of its own
 
 # matomo tracking: see https://matomo.org/
 [matomo]

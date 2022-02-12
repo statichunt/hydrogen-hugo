@@ -1,6 +1,6 @@
 ---
 title: "Freddy Carter"
-image: "images/developer.jpg"
+image: "images/developer.png"
 designation: "Front-end developer"
 description: "Meta description"
 ---
