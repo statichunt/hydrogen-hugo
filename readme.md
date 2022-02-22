@@ -80,8 +80,7 @@ View all the websites powered by hydrogen Hugo  [here](https://github.com/static
 
 ## License
 
-Copyright &copy; Designed by [Themefisher](https://themefisher.com) & Developed by
-[Gethugothemes](https://gethugothemes.com)
+Copyright &copy; Design and developed by [Statichunt](https://statichunt.com)
 
 **Code License:** Released under the [MIT](https://github.com/statichunt/hydrogen-hugo/blob/master/LICENSE) license.
 
@@ -97,15 +96,3 @@ share those images.
 - [Google Fonts](https://fonts.google.com)
 - [All Contributors](https://github.com/statichunt/hydrogen-hugo/graphs/contributors)
 
-## Hire Us
-
-We are available for **Hiring** for your next HUGO project. Please, check our
-[services](https://gethugothemes.com/services/?ref=github)
-
-<!-- premium themes -->
-
-## Premium Themes By Us
-
-| [![Mega-Bundle-HUGO](https://demo.gethugothemes.com/thumbnails/bundle.webp)](https://gethugothemes.com/bundle) | [![Delta](https://demo.gethugothemes.com/thumbnails/delta.webp)](https://gethugothemes.com/products/delta/) | [![Bizcraft](https://demo.gethugothemes.com/thumbnails/agico.webp)](https://gethugothemes.com/products/agico-hugo-theme/) |
-| :------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: |
-|                                         **Premium Theme Bundle (40+)**                                         |                                                  **Delta**                                                  |                                                         **Agico**                                                         |
