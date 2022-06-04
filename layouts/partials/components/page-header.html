@@ -27,8 +27,8 @@
         >
 
         <!-- navbar -->
-        <nav class="navigation navbar justify-content-center my-5 pb-4">
-          <ul class="navbar-nav navbar-inline d-block">
+        <nav class="navigation navbar navbar-pageheader justify-content-center my-5 pb-4">
+          <ul class="navbar-nav navbar-inline d-block mt-0">
             <!-- showing menu first item -->
             <li class="nav-item">
               <a class="nav-link" href="{{ $base }}"
@@ -105,14 +105,14 @@
             </li>
             {{ end }} {{ end }}
             <!-- showing menus -->
-            {{ end }} {{ partial "components/translation.html" . }}
+            {{ end }}
           </ul>
         </nav>
         <!-- /navigation -->
       </div>
 
       <div class="col-lg-12 mx-auto text-center">
-        <h1 class="text-capitalize mb-">{{.Title | markdownify}}</h1>
+        <h1 class="text-capitalize mb-0">{{.Title | markdownify}}</h1>
       </div>
     </div>
   </div>

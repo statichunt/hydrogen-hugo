@@ -1,15 +1,24 @@
 {{ if .IsTranslated }}
 <!-- Language List -->
-<li class="nav-item dropdown">
-  {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
-  <button class="dropdown-toggle bg-transparent border-0 nav-link" type="button" id="select-language" data-bs-toggle="dropdown" aria-expanded="false">{{ .LanguageName }}</button>
-  {{ end }}{{ end }}{{ end }}{{ end }}
-  <ul class="dropdown-menu" aria-labelledby="select-language">
-    {{ $siteLanguages := site.Languages}}{{ $pageLang := .Page.Lang}}{{ range .Page.AllTranslations }}{{ $translation := .}}{{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}{{ $selected := false }}{{ if eq $pageLang .Lang}}
-      <li id="{{ $translation.Language }}"><a class="dropdown-item active" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
+<li class="nav-item translation-nav">
+  {{ $siteLanguages := site.Languages}}
+  {{ $pageLang := .Page.Lang}}
+  {{ range .Page.AllTranslations }}
+    {{ $translation := .}}
+    {{ range $siteLanguages }}
+    {{ if eq $translation.Lang .Lang }}
+    {{ $selected := false }}
+    {{ if eq $pageLang .Lang}}
+    <a class="active" href="{{ $translation.RelPermalink }}">
+      <img src="{{ (resources.Get .Params.flag).RelPermalink }}" alt="{{ .LanguageName }}">
+    </a>
     {{ else }}
-      <li id="{{ $translation.Language }}"><a class="dropdown-item" href="{{ $translation.RelPermalink }}">{{ .LanguageName }}</a></li>
-    {{ end }}{{ end }}{{ end }}{{ end }}
-  </ul>
+    <a href="{{ $translation.RelPermalink }}">
+      <img src="{{ (resources.Get .Params.flag).RelPermalink }}" alt="{{ .LanguageName }}">
+    </a>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  {{ end }}
 </li>
 {{ end }}

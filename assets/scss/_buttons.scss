@@ -3,8 +3,9 @@
   font-size: 0.9rem;
   font-family: $font-primary;
   text-transform: capitalize;
-  padding: .7em 1em;
-  border-radius: 0;
+  padding: .67em 1em;
+  padding-top: .8em;
+  border-radius: 6px;
   border: 1px solid;
   position: relative;
   z-index: 1;
@@ -22,20 +23,16 @@
 }
 
 .btn-sm{
-  padding: .5em .7em;
+  padding: .47em .7em;
+  padding-top: .6em;
   font-size: .8rem;
+  border-radius: 4px;
 }
 
 .btn-primary {
   background: $white;
   color: $black !important;
-  box-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
-  transform: skewX(-12deg);
   border: 0;
-  span {
-    display: block;
-    transform: skewX(12deg);
-  }
 
   &:hover,
   &:active,

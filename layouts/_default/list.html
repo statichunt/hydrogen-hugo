@@ -7,19 +7,22 @@
 
 <section>
   <div class="container">
-    {{ $totalPost := len .Data.Pages }}
-    <div class="row article-row g-0 {{ if lt $totalPost 3 }}justify-content-center{{end}}">
-      {{ if site.Params.search }}
-      <div class="col-lg-12 search-wrap">
-        <div class="input-group">
-          <span class="input-group-text bg-transparent text-white border-0" id="basic-addon1"><i class="fas fa-search"></i></span>
-          <input type="text" class="form-control shadow-none text-white border-0 rounded-0" type="text" id="search_post" onkeyup="searchPost()" placeholder="{{i18n `search_blog`}}" aria-label="{{i18n `search_blog`}}" aria-describedby="{{i18n `search_blog`}}">
+    <div class="col-xl-10 col-lg-11 mx-auto">
+      <div class="row article-row g-4">
+        {{ if site.Params.search }}
+        <div class="col-lg-12 search-wrap">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent text-white border-0" id="basic-addon1"><i class="fas fa-search"></i></span>
+            <input type="text" class="form-control shadow-none text-white border-0 rounded-0" type="text" id="search_post" onkeyup="searchPost()" placeholder="{{i18n `search_blog`}}" aria-label="{{i18n `search_blog`}}" aria-describedby="{{i18n `search_blog`}}">
+          </div>
         </div>
+        {{ end }}
+        {{ range .Data.Pages }}
+        <div class="col-lg-6">
+          {{ .Render "post" }}
+        </div>
+        {{ end }}
       </div>
-      {{ end }}
-      {{ range .Data.Pages }}
-        {{ .Render "post" }}
-      {{ end }}
     </div>
   </div>
 </section>

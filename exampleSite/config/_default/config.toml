@@ -18,7 +18,7 @@ hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/K
 [module]
 [module.hugoVersion]
 extended = true
-min = "0.90.1"
+min = "0.100.1"
 
 ############################# Outputs ##############################
 [outputs]

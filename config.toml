@@ -8,7 +8,7 @@
 ######################### site variables ##############################
 # customize your color and font from here.
 [params.variables]
-color_primary = "#1ce7e1"
+color_primary = "#61eebc"
 color_secondary = "#00fff2"
 color_tertiary = "#f62410"
 body_color = "#17212B"
@@ -38,11 +38,11 @@ font_scale = "1.2" # default is "majorThird": 1.25
 
 # go to https://fonts.google.com/ to find the font you want to use. select your font and copy only the bold part from the URL. and paste it here.
 # example: "Work+Sans:wght@400;500;600"
-font_primary = "Barlow:wght@400;500;600;700"
-font_primary_type = "serif"                  # [serif/sans-serif]
+font_primary = "Questrial"
+font_primary_type = "sans-serif"            # [serif/sans-serif]
 font_secondary = ""
-font_secondary_type = ""                     # [serif/sans-serif]
-font_icon = "Font Awesome 6 Free"            # https://fontawesome.com/v6.0/icons/
+font_secondary_type = ""                    # [serif/sans-serif]
+font_icon = "Font Awesome 6 Free"           # https://fontawesome.com/v6.0/icons/
 
 
 ############################# Plugins ##############################
@@ -57,6 +57,13 @@ link = "plugins/font-awesome/v6/icons.css"
 
 # JS Plugins
 [[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.js"
-[[params.plugins.js]]
 link = "plugins/webfont/webfont-loader-2.js"
+[[params.plugins.js]]
+link = "plugins/glightbox.js"
+[[params.plugins.js]]
+link = "plugins/cookie/cookie.js"
+# [[params.plugins.js]]
+# link = "plugins/lazy-loader.js"
+# [[params.plugins.js]]
+# link = "https://cpwebassets.codepen.io/assets/embed/ei.js"
+# attributes = "async"

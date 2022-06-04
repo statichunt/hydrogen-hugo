@@ -1,33 +1,33 @@
 #################### default parameters ################################
 # favicon
 favicon = "images/developer.png"
-# preloader
+# Preloader
 preloader = false
 # search
 search = false
-# main sections
+# Main Sections
 mainSections = ["blog"]
 # related posts
 related_post = true
 # image gallery shortcode
 image_gallery = true
 # contact form action
-contact_form_action = "#" # contact form works with https://airform.io
-# copyright
-theme_copyright = true
-copyright = "Copyright by your_company"
+contact_form_action = "#" # contact form works with [https://airform.io/] or [https://formspree.io]
 # google tag manager, see https://developers.google.com/tag-manager/
 google_tag_manager = "" # example: G-XXXXXXXXXX
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
+# copyright
+theme_copyright = true
+copyright = "Copyright by your company"
 
 # Crisp Chat
 [crisp_chat]
-enable = true
+enable = false
 crisp_website_id = "9aa449e1-9999-422a-938f-8567982eec6d" # replace this code with yours
 # Check this video tutorial to get your crisp website ID - https://www.youtube.com/watch?v=nW5UX6iVdFc
 
-# Valine Comment (if disqusShortname is not set in config.toml, Valine will be used)
+# Valine Comment
 [valine_comment]
 enable = true
 appId = ""    # replace this code with yours [ex: QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI]
@@ -47,7 +47,7 @@ enableQQ = false # https://valine.js.org/en/configuration.html#enableQQ
 keywords = ["Hydrogen", "Hugo", "Themefisher", "GetHugoThemes", "Statichunt"]
 description = "This is meta description"
 author = "Statichunt"
-image = "images/developer.png"                                                # this image will be used as fallback if a page has no image of its own
+image = "images/developer.png" # this image will be used as fallback if a page has no image of its own
 
 # matomo tracking: see https://matomo.org/
 [matomo]
@@ -87,8 +87,8 @@ button = "I Accept"
 ############################# social site ########################
 [[social]]
 title = "facebook"
-icon = "fab fa-facebook"      # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://facebook.com"
+icon = "fab fa-facebook" # fontawesome icon pack : https://fontawesome.com/icons/
+link = "#"
 
 [[social]]
 title = "twitter"

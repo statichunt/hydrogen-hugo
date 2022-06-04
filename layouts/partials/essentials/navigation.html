@@ -1,49 +1,60 @@
 <!-- navbar -->
-<nav class="navigation navbar justify-content-center py-0">  
-  <ul class="navbar-nav d-block">
-    {{ $base := add (site.BaseURL | relLangURL) "/" }}
-    {{ if strings.HasSuffix $base "//" }}
-    {{ $base = strings.TrimSuffix $base "/" }}
-    {{ end }}
-    <!-- showing menu first item -->
-    <li class="nav-item {{ if $.IsHome }}active{{ end }}">
-      <a class="nav-link" href="{{$base}}"><span>{{i18n `all_posts`}}</span></a>
-    </li>
-    <!-- showing menu first item -->
+<nav class="navigation navbar navbar-expand-md justify-content-center mt-5 pt-5">
+  <!-- menu toggler -->
+  <button class="btn btn-primary d-flex d-md-none align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+    <span class="ms-1">MENU</span>
+  </button>
 
-    <!-- showing categories -->
-    {{ range first 5 (site.Taxonomies.categories.ByCount) }}
-    <li class="nav-item opacity-75">
-      <a class="nav-link" href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span></a>
-    </li>
-    {{ end }}
-    <!-- showing categories -->
+  <div id="navbar" class="collapse navbar-collapse">
+    <!-- <ul class="navbar-nav navbar-inline d-none d-md-block"> -->
+    <ul class="navbar-nav navbar-inline mx-auto">
+      {{ $base := add (site.BaseURL | relLangURL) "/" }}
+      {{ if strings.HasSuffix $base "//" }}
+      {{ $base = strings.TrimSuffix $base "/" }}
+      {{ end }}
+      <!-- showing menu first item -->
+      <li class="nav-item {{ if $.IsHome }}active{{ end }}">
+        <a class="nav-link" href="{{$base}}">{{i18n `all_posts`}}</a>
+      </li>
+      <!-- showing menu first item -->
 
-    <!-- showing menus -->
-    {{ range site.Menus.main }}
-    {{ if .HasChildren }}
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        {{ .Name }}
-      </a>
-      <div class="dropdown-menu">
-        {{ range .Children }}
-        <a class="dropdown-item" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
-          href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
-        {{ end }}
-      </div>
-    </li>
-    {{ else }}
-    <li class="nav-item">
-      <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
-        href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}"><span>{{.Name}}</span></a>
-    </li>
-    {{ end }}
-    {{ end }}
-    <!-- showing menus -->
+      <!-- showing categories -->
+      {{ range first 4 (site.Taxonomies.categories.ByCount) }}
+      <li class="nav-item opacity-75">
+        <a class="nav-link" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+      </li>
+      {{ end }}
+      <!-- showing categories -->
 
-    {{ partial "components/translation.html" . }}
-  </ul>
+      <!-- showing menus -->
+      {{ range site.Menus.main }}
+      {{ if .HasChildren }}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          {{ .Name }}
+        </a>
+        <div class="dropdown-menu">
+          {{ range .Children }}
+          <a class="dropdown-item" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+            href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
+          {{ end }}
+        </div>
+      </li>
+      {{ else }}
+      <li class="nav-item">
+        <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+          href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}"><span>{{.Name}}</span></a>
+      </li>
+      {{ end }}
+      {{ end }}
+      <!-- showing menus -->
+
+      {{ partial "components/translation.html" . }}
+    </ul>
+  </div>
 </nav>
 <!-- /navigation -->

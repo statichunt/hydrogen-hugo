@@ -27,5 +27,5 @@
 {{ end }}
 {{ end }}
 {{ $styles := $styles | append (resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS) }}
-{{ $styles := $styles | resources.Concat "/css/style.css" | minify | fingerprint "sha512"}}
+{{ $styles := $styles | resources.Concat "/css/style.css" | fingerprint "sha512"}}
 <style type="text/css">{{$styles.Content | safeCSS}}</style>

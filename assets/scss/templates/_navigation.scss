@@ -2,30 +2,23 @@
 .navigation {
   .navbar-nav .nav-item {
     user-select: none;
-    margin: .8em 0;
+    margin: 0 4px !important;
     .nav-link {
       color: $white;
-      padding: 0 0.3em;
+      padding: 0.2em 0.8em;
+      padding-top: 0.22em;
       display: inline-block;
+      border-radius: 6px;
     }
     &:not(.dropdown) {
       .nav-link:hover{
-        color: $dark;
-        background-color: $white;
+        color: $white;
+        background-color: rgba($white, .1);
       }
-      .nav-link {
-        transform: skewX(-12deg);
-        span {
-          display: block;
-          transform: skewX(12deg);
-        }
-      }
-      &.active{
+      &.active {
         .nav-link{
-          padding: 0 0.3em;
-          color: $dark;
-          background-color: $white;
-          box-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
+          color: $white;
+          background-color: rgba($white, .1);
         }
       }
     }
@@ -67,12 +60,36 @@
 }
 
 .navbar-inline {
+  @include tablet {
+    margin-top: 30px;
+  }
   .nav-item {
     display: inline-block;
-    margin: 0 1.4em .7em 0 !important;
+    margin: 0 .5em !important;
+    @include tablet {
+      display: block;
+      text-align: center;
+    }
+    &.translation-nav {
+      @include tablet {
+        min-width: 120px;
+        margin-top: 10px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
   }
-  .nav-item:last-child {
-    margin-right: 0 !important;
+}
+
+.navbar-pageheader {
+  .navbar-inline {
+    .nav-item {
+      @include tablet {
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 5px !important;
+      }
+    }
   }
 }
 
@@ -132,5 +149,24 @@
 
   &:focus {
     box-shadow: none !important;
+  }
+}
+
+.translation-nav {
+  background-color: rgba($white, .1);
+  padding: 2px 4px 5px 4px;
+  border-radius: 6px;
+  transform: translateY(-1px);
+  a {
+    display: inline-block;
+    margin: 0 4px;
+    filter: grayscale(1);
+    &:hover,
+    &.active {
+      filter: grayscale(0);
+    }
+    &.active {
+      pointer-events: none;
+    }
   }
 }

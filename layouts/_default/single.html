@@ -18,7 +18,7 @@
           
         {{with .Params.image}}
         <div class="mb-5">
-          {{ partial "images/image.html" (dict "Src" . "Class" "w-100 h-auto" "Alt" "post-thumb") }}
+          {{ partial "image.html" (dict "Src" . "Class" "w-100 h-auto" "Alt" "post-thumb") }}
         </div>
         {{end}}
 
@@ -67,10 +67,12 @@
     </div>
   </div>
   {{ $related := (where site.RegularPages "Section" "blog") | intersect (where site.Pages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) }}
-  <div class="row article-row g-0 justify-content-center">
+  <div class="row article-row justify-content-center">
     {{ range first 3 $related }}
-    <!-- post card here -->
-    {{ .Render "post" }}
+      <!-- post card here -->
+      <div class="col-lg-4 col-md-6">
+      {{ .Render "post" }}
+      </div>
     {{ end }}
   </div>
 </div>
@@ -89,7 +91,7 @@
         {{ $imagePath:= .Params.image }}
 
         {{ if $imagePath }}
-        {{ partial "images/image.html" (dict "Src" $imagePath "Context" .Page ) }}
+        {{ partial "image.html" (dict "Src" $imagePath "Context" .Page ) }}
         {{ end }}
 
         {{.Content}}

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # default versions
-if [ -z $GO_VERSION ]; then GO_VERSION='1.16.2'; fi
-if [ -z $HUGO_VERSION ]; then HUGO_VERSION='0.91.2'; fi
+if [ -z $GO_VERSION ]; then GO_VERSION='1.18.1'; fi
+if [ -z $HUGO_VERSION ]; then HUGO_VERSION='0.98.0'; fi
 
 # install Go
 curl -sSOL https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz

@@ -206,7 +206,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ### Youtube video
 
-{{< youtube ResipmZmpDU >}}
+{{< youtube-lite ResipmZmpDU >}}
 
 <hr>
 

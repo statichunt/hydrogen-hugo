@@ -2,11 +2,12 @@
   "use strict";
 
   // Preloader js
-  window.addEventListener("load", (e) => {
-    if (typeof(element) != 'undefined' && element != null) {
-      document.querySelector(".preloader").style.display = "none";
-    }
-  });
+  var preloader = document.querySelector(".preloader");
+  if (preloader) {
+    window.addEventListener("load", () => {
+      preloader.classList.add("preloader-hide");
+    });
+  }
 })();
 
 // tab shortcode

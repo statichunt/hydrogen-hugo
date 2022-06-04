@@ -7,7 +7,6 @@ body {
   background-color: lighten(desaturate(adjust-hue($body-bg, -2), 9.09), 25);
 }
 
-/* preloader */
 .preloader {
   position: fixed;
   top: 0;
@@ -15,10 +14,15 @@ body {
   right: 0;
   bottom: 0;
   background-color: $body-bg;
-  z-index: 9999;
+  z-index: 999999;
   display: flex;
   align-items: center;
   justify-content: center;
+    transition: 0.2s ease-in-out;
+  &-hide {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 img {
@@ -51,6 +55,10 @@ a:hover {
   color: $color-primary;
 }
 
+.slick-slide {
+  outline: 0;
+}
+
 .section {
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
@@ -70,7 +78,7 @@ a:hover {
   background-repeat: no-repeat;
 }
 
-.border-default{
+.border-default {
   border-color: $border-color !important;
 }
 
@@ -80,8 +88,7 @@ a:hover {
   color: rgba($white, 1);
   position: relative;
   z-index: 1;
-  text-shadow: -1px 1px $color-secondary, 1px -1px $color-tertiary;
-  margin-right: 5px;
+  margin: 0 5px;
   &:hover {
     color: rgba($white, 1);
     transform: scale(1.5);
@@ -94,13 +101,13 @@ a:hover {
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     background: $black;
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
@@ -139,6 +146,7 @@ a:hover {
 // line-link
 .line-link {
   position: relative;
+  opacity: .8;
   i {
     transition: 0.3s;
     position: relative;
@@ -159,6 +167,7 @@ a:hover {
   }
   &:hover {
     margin-left: 3px;
+    opacity: 1;
     i {
       left: 0;
       opacity: 1;
@@ -387,6 +396,7 @@ a:hover {
     margin: 2rem 0;
     position: relative;
     overflow: hidden;
+    border-radius: 6px;
     p {
       padding: .7rem;
       margin-bottom: 0;
@@ -438,13 +448,35 @@ a:hover {
     }
   }
 
+  // tabs
+  .tab-content {
+    border-radius: 6px;
+  }
+  .tab-nav-button {
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+
+  // table
+  table {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
   // collapse / accordion
+  .accordion {
+    margin-bottom: 10px;
+  }
   .accordion-item {
     border: 0;
   }
+  .accordion-header {
+    margin-bottom: 0 !important;
+    border: 0;
+  }
   .accordion-button {
-    padding: .7rem 1.25rem;
-    margin-top: 5px;
+    padding: .2rem 1.25rem;
+    border-radius: 6px;
     color: $white;
     background-color: lighten(desaturate(adjust-hue($body-bg, -2), 8.20), 10) !important;
     &::after {
@@ -463,41 +495,15 @@ a:hover {
   // blockquote
   blockquote {
     font-size: 1.3rem !important;
-    padding: 2rem 2.5rem;
-    padding-top: 2.5rem;
+    padding: 1.5rem 2rem;
+    padding-top: 2rem;
     margin: 2rem 0;
     color: $white;
     position: relative;
     z-index: 1;
-    &::before {
-      position: absolute;
-      content: "";
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transform: skew(-2deg);
-      background-color: rgba($white, .1);
-      box-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
-      opacity: .8;
-    }
-    &::after {
-      position: absolute;
-      content: "❝";
-      top: -35px;
-      font-size: 7rem;
-      opacity: .2;
-      left: 20px;
-      text-shadow: -2px 1px $color-secondary, 2px -1px $color-tertiary;
-      pointer-events: none;
-    }
-    @include mobile {
-      &::before,
-      &::after {
-        transform: skew(0deg);
-      }
-    }
+    border-radius: 6px;
+    background-color: rgba($color-primary, .04);
+    border-left: 4px solid $color-primary;
 
     p {
       margin-bottom: 0 !important;
@@ -511,7 +517,9 @@ a:hover {
     margin: .7rem 0;
     white-space: pre-wrap;
     background-color: lighten(desaturate(adjust-hue($body-bg, -2), 8.20), 5.69) !important;
-    
+    span {
+      margin-bottom: 0;
+    }
   }
   code {
     margin-bottom: 0 !important;
@@ -577,11 +585,15 @@ video {
   margin-bottom: 0;
 }
 .gist .gist-data {
-  background-color: #242e38 !important;
+  padding-top: 6px;
+  background-color: #f7f7f7 !important;
 }
 .gist .gist-file {
   border: none !important;
 }
 .gist .file {
   margin: 0 !important;
+}
+.content .gist table tbody {
+  background-color: #f7f7f7 !important;
 }

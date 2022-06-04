@@ -1,0 +1,43 @@
+<!-- cookie -->
+{{ with site.Params.cookies }}
+{{ if .enable }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	{{.content | markdownify}}<span id="js-cookie-button" class="btn btn-sm btn-primary ms-3 d-inline-block">{{.button}}</span>
+</div>
+<script type="application/javascript">
+  const cookieBox = document.getElementById('js-cookie-box');
+  const cookieButton = document.getElementById('js-cookie-button');
+  if (!Cookies.get('cookie-box')) {
+    cookieBox.classList.remove('cookie-box-hide');
+    cookieButton.onclick = function () {
+      Cookies.set('cookie-box', true, {
+        expires: {{ .expire_days }}
+      });
+      cookieBox.classList.add('cookie-box-hide');
+    };
+  }
+</script>
+
+<!-- cookie style -->
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(56 72 92);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+  line-height: 2;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+{{ end }}
+{{ end }}

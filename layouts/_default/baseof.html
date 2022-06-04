@@ -9,6 +9,7 @@ AUTHOR WEBSITE: https://gethugothemes.com
 <html lang="{{ site.LanguageCode | default `en-US` }}" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
+	<!-- head (don't cache it) -->
 	{{ partial "essentials/head.html" . }}
 
 	<!-- cache partial only in production -->
@@ -20,11 +21,8 @@ AUTHOR WEBSITE: https://gethugothemes.com
 </head>
 
 <body>
-	<!-- cache partial only in production -->
-	{{ if hugo.IsProduction }}
-	{{ partialCached "components/preloader.html" . }}
-	{{ partialCached "datasets/gtm-noscript.html" . }}
-	{{ else }}
+
+	{{ if site.Params.preloader }}
 	{{ partial "components/preloader.html" . }}
 	{{ end }}
 
@@ -34,11 +32,11 @@ AUTHOR WEBSITE: https://gethugothemes.com
 
 	<!-- cache partial only in production -->
 	{{ if hugo.IsProduction }}
-	{{ partialCached "essentials/script.html" . }}
 	{{ partialCached "essentials/footer.html" . }}
+	{{ partialCached "essentials/script.html" . }}
 	{{ else }}
-	{{ partial "essentials/script.html" . }}
 	{{ partial "essentials/footer.html" . }}
+	{{ partial "essentials/script.html" . }}
 	{{ end }}
 </body>
 

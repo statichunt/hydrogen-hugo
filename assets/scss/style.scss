@@ -34,7 +34,7 @@ $font-icon: '{{.font_icon | default "Font Awesome 5 Free"}}';
 @import 'templates/navigation.scss';
 
 {{ if site.Params.image_gallery }}
-@import 'templates/image_gallery.scss';
+@import 'gallery';
 {{ end }}
 
 @import 'templates/main.scss';

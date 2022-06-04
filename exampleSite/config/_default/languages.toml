@@ -4,6 +4,8 @@ languageName = "English"
 languageCode = "en-us"
 contentDir = "content/english"
 weight = 1
+[en.params]
+flag = "images/flags/en.svg"
 
 
 ################ French language ##################
@@ -12,3 +14,5 @@ languageName = "French"
 languageCode = "fr-fr"
 contentDir = "content/french"
 weight = 2
+[fr.params]
+flag = "images/flags/fr.svg"

@@ -1,37 +1,28 @@
 {{ define "main" }}
 
+{{ partial "essentials/navigation.html" . }}
+
 <section class="section intro-banner">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8">
-        <div class="row gx-5 gy-4">
-          <div class="col-lg-4 col-md-4 col-sm-7">
-            {{ partial "images/image.html" (dict "Src" .Params.image "Loading" "eager" "Class" "intro-image" "Alt" .Params.title "Size" "374x") }}
-          </div>
-          <div class="col-lg-8 col-md-7">
-            <div class="ps-0 ps-lg-2">
-              <h1 class="title mb-4" data-text="{{ .Title | markdownify}}">{{ .Title | markdownify}}</h1>
-              <p class="lead text-primary">{{ .Params.designation | markdownify }}</p>
-              {{ with site.Params.social }}
-              <ul class="list-inline social-links">
-                {{ range . }}
-                  <li class="list-inline-item me-2 mb-1">
-                    <a class="p-1" href="{{ .link | safeURL }}" title="title" target="_blank" rel="nofollow">
-                      <i class="{{.icon}}"></i>
-                    </a>
-                  </li>
-                {{ end }}
-              </ul>
-              {{ end }}
-            </div>
-          </div>
-          <div class="col-12">
-            <p>{{ .Content | markdownify }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mt-5 mt-lg-0 pt-4 pt-lg-0">
-        {{ partial "essentials/navigation.html" . }}
+      <div class="col-lg-8 mx-auto text-center">
+        {{ partial "image.html" (dict "Src" .Params.image "Class" "intro-image mb-5 rounded-circle" "Alt" .Params.title "Size" "374x") }}
+        
+        <h1 class="title mb-4" data-text="{{ .Title | markdownify}}">{{ .Title | markdownify}}</h1>
+        <p class="lead text-primary">{{ .Params.designation | markdownify }}</p>
+        <p class="lead">{{ .Content | markdownify }}</p>
+
+        {{ with site.Params.social }}
+        <ul class="list-inline social-links mt-4">
+          {{ range . }}
+            <li class="list-inline-item me-2 mb-1">
+              <a class="p-1" href="{{ .link | safeURL }}" title="title" target="_blank" rel="nofollow">
+                <i class="{{.icon}}"></i>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+        {{ end }}
       </div>
     </div>
   </div>
@@ -39,19 +30,24 @@
 
 <section class="pt-4">
   <div class="container">
-    {{ $totalPost := len (where site.RegularPages "Section" "in" site.Params.mainSections) }}
-    <div class="row article-row g-0 {{ if lt $totalPost 3 }}justify-content-center{{end}}">
-      {{ if site.Params.search }}
-      <div class="col-lg-12 search-wrap">
-        <div class="input-group">
-          <span class="input-group-text bg-transparent text-white border-0" id="basic-addon1"><i class="fas fa-search"></i></span>
-          <input type="text" class="form-control shadow-none text-white border-0 rounded-0" type="text" id="search_post" onkeyup="searchPost()" placeholder="{{i18n `search_blog`}}" aria-label="{{i18n `search_blog`}}" aria-describedby="{{i18n `search_blog`}}">
+    <div class="row">
+      <div class="col-xl-10 col-lg-11 mx-auto">
+        <div class="row article-row g-4">
+          {{ if site.Params.search }}
+          <div class="col-lg-12 search-wrap">
+            <div class="input-group">
+              <span class="input-group-text bg-transparent text-white border-0" id="basic-addon1"><i class="fas fa-search"></i></span>
+              <input type="text" class="form-control shadow-none text-white border-0 rounded-0" type="text" id="search_post" onkeyup="searchPost()" placeholder="{{i18n `search_blog`}}" aria-label="{{i18n `search_blog`}}" aria-describedby="{{i18n `search_blog`}}">
+            </div>
+          </div>
+          {{ end }}
+          {{ range where site.RegularPages "Section" "in" site.Params.mainSections }}
+          <div class="col-lg-6">
+            {{ .Render "post" }}
+          </div>
+          {{ end }}
         </div>
       </div>
-      {{ end }}
-      {{ range where site.RegularPages "Section" "in" site.Params.mainSections }}
-        {{ .Render "post" }}
-      {{ end }}
     </div>
   </div>
 </section>
