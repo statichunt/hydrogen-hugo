@@ -32,6 +32,9 @@
 git clone git@github.com:statichunt/hydrogen-hugo.git
 
 # cd in the project directory
+$ npm install
+
+# cd in the project directory
 $ cd hydrogen-hugo/exampleSite/
 
 # Start local dev server
