@@ -58,19 +58,19 @@ Follow the steps.
 
 ## Prefer a video? (Hugo + Netlify + Forestry)
 
-Build your website with **Andromeda Light Hugo** theme by following these easy steps (No Coding Required!)
+Build your website with **Hydrogen Hugo** theme by following these easy steps (No Coding Required!)
 [Video Tutorial](https://youtu.be/ResipmZmpDU).
 
 <!-- reporting issue -->
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the andromeda light Template. Please Search [existing
+We use GitHub Issues as the official bug tracker for the hydrogen theme. Please Search [existing
 issues](https://github.com/statichunt/hydrogen-hugo/issues). Someone may have already reported the same problem.
 If your problem or idea has not been addressed yet, feel free to [open a new
 issue](https://github.com/statichunt/hydrogen-hugo/issues).
 
-<!-- ## andromeda light Hugo  Powered Websites
+<!-- ## hydrogen Hugo  Powered Websites
 
 
 

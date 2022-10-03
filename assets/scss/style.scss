@@ -21,7 +21,7 @@ $font-secondary: '{{replace (replaceRE ":[ital,]*[ital@]*[wght@]*[0-9,;]+" "" .f
 $font-icon: '{{.font_icon | default "Font Awesome 5 Free"}}';
 {{ end }}
 
-@import 'bootstrap/bootstrap';
+@import 'templates/bootstrap';
 
 @import 'mixins';
 

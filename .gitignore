@@ -10,3 +10,4 @@ package-lock.json
 public
 resources
 .hugo_build.lock
+yarn.lock
