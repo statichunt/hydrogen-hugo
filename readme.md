@@ -1,4 +1,8 @@
-# <h1 align=center>Hydrogen | <a target="_blank" href="https://demo.statichunt.com/hydrogen-hugo/" rel="nofollow">Demo</a></h1>
+# <h1 align=center>Hydrogen</h1>
+
+<p align=center>Hydrogen Hugo is an excellent theme for creating a personal blog</p>
+<h2 align="center"><a target="_blank" href="https://demo.statichunt.com/hydrogen-hugo/" rel="nofollow">Demo</a> |<a target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.statichunt.com%2Fhydrogen-hugo%2F&form_factor=desktop" rel="nofollow"> Page Speed(99%)</a> </h2>
+
 
 <p align=center>
   <a href="https://github.com/gohugoio/hugo/releases/tag/v0.89.2" alt="Contributors">
