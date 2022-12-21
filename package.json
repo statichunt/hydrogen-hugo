@@ -1,7 +1,7 @@
 {
   "name": "hydrogen-hugo",
   "version": "1.0.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": "statichunt",
   "scripts": {
     "dev": "cd exampleSite; hugo server || hugo server --themesDir ../..",
