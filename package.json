@@ -1,8 +1,8 @@
 {
-  "name": "gethugothemes-boilerplate",
+  "name": "hydrogen-hugo",
   "version": "1.0.0",
   "license": "UNLICENSED",
-  "author": "gethugothemes",
+  "author": "statichunt",
   "scripts": {
     "dev": "cd exampleSite; hugo server || hugo server --themesDir ../..",
     "test": "cd exampleSite; hugo server --themesDir ../.. --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --verbose --verboseLog --buildDrafts --buildExpired --buildFuture --watch --forceSyncStatic -e production --minify|| hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --verbose --verboseLog --buildDrafts --buildExpired --buildFuture --watch --forceSyncStatic -e production --minify",
