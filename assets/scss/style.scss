@@ -22,21 +22,14 @@ $font-icon: '{{.font_icon | default "Font Awesome 5 Free"}}';
 {{ end }}
 
 @import 'templates/bootstrap';
-
 @import 'mixins';
-
 @import 'typography';
-
 @import 'buttons';
-
 @import 'common';
-
 @import 'templates/navigation.scss';
-
-{{ if site.Params.image_gallery }}
-@import 'gallery';
-{{ end }}
-
+@import 'gallery-slider';
 @import 'templates/main.scss';
-
 @import 'custom.scss';
+@import 'accordion';
+@import 'notice';
+@import 'tab';

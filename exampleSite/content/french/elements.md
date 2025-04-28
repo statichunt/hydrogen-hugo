@@ -170,34 +170,35 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 <hr>
 
-##### Collapse
+##### Accordion
 
-{{< collapse "Why should you need to do this?" >}}
-
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur
-  {{< /collapse >}}
-
-{{< collapse "How can I adjust Horizontal centering" >}}
+{{< accordion "Why should you need to do this?" >}}
 
 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
 - Lorem ipsum dolor sit amet consectetur
-  {{< /collapse >}}
+  {{< /accordion >}}
 
-{{< collapse "Should you use Negative margin?" >}}
+{{< accordion "How can I adjust Horizontal centering" >}}
 
 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
 - Lorem ipsum dolor sit amet consectetur
-{{< /collapse >}}
+  {{< /accordion >}}
 
+{{< accordion "Should you use Negative margin?" >}}
+
+- Lorem ipsum dolor sit amet consectetur adipisicing elit.
+- Lorem ipsum dolor sit amet consectetur adipisicing elit.
+- Lorem ipsum dolor sit amet consectetur
+  {{< /accordion >}}
 
 <hr>
 
 ##### Image
+
 {{< image src="images/posts/post-2.jpg" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid w-100" title="image title"  webp="false" >}}
+
 <hr>
 
 ##### Gallery
@@ -211,4 +212,5 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 <hr>
 
 ### Custom video
-{{< video src="https://www.w3schools.com/html/mov_bbb.mp4" width="500" height="auto" autoplay="false" loop="false" muted="false" controls="true" class="" >}}
+
+{{< video src="https://www.w3schools.com/html/mov_bbb.mp4" width="100%" height="auto" autoplay="false" loop="false" muted="false" controls="true" class="" >}}

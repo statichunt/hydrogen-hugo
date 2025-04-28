@@ -33,7 +33,6 @@
   }
 }
 
-
 // article card
 .article-row {
   .card {
@@ -64,7 +63,7 @@
 .article {
   .blog-title {
     &:hover {
-      color: rgba($light, .9);
+      color: rgba($light, 0.9);
     }
   }
 }
@@ -94,12 +93,19 @@ textarea.form-control {
   padding-bottom: 20px;
 }
 
+.form-control::placeholder {
+  color: $text-light;
+  opacity: 0.5;
+}
+
 // page not found
 .page-not-found {
   h1 {
     font-size: 100px;
     font-weight: bold;
-    text-shadow: -2px 1px $color-secondary, 2px 0 $color-tertiary;
+    text-shadow:
+      -2px 1px $color-secondary,
+      2px 0 $color-tertiary;
     margin-bottom: 20px;
   }
   p {

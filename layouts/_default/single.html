@@ -43,7 +43,7 @@
         </div>
 
         <!-- comments -->
-        {{ if .Site.DisqusShortname }}
+        {{ if site.Config.Services.Disqus.Shortname }}
         <div class="mt-5">
           {{ template "_internal/disqus.html" . }}
         </div>
